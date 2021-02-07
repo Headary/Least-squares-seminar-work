@@ -1,0 +1,30 @@
+\documentclass[12pt,twoside,a4paper]{seminarka}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{subfiles}
+\usepackage[nottoc]{tocbibind}
+
+\author{Adam Krška}
+\title{Stanovení parametru termočlánku pomocí metody nejmenších čtverců}
+\leader{Mgr. Roman Pavlačka, Ph.D.}
+
+\graphicspath{{./graf/}}
+\addbibresource{sources.bib}
+
+%\geometry{showframe}
+
+\begin{document}
+\maketitle
+
+\subfile{sekce/1-uvod.tex}
+\subfile{sekce/2-cil_prace.tex}
+\subfile{sekce/3-soucasny-stav-resene-problematiky.tex}
+\subfile{sekce/4-vysledky.tex}
+\subfile{sekce/5-zaver.tex}
+
+\printbibliography[title={Zdroje}]
+
+\listoffigures
+\listoftables
+\end{document}

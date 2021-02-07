@@ -1,0 +1,43 @@
+\section{Úvod}
+V~dnešní době sbírají vědci (a~nejen ti) velké množství dat, převážně potom
+díky rozmachu digitálních měřících metod, které ve velké míře již nahradily
+měření analogová. U~těch byla nevýhoda ručního zapisování dat a~poté i~ručního
+zpracování. Ovšem díky dnešním experimentálním metodám jsme schopni měřit
+mnohem přesně, vícekrát a~s~menší námahou. Tato naměřená data jsou dále
+zpracována pomocí počítačů, což práci zrychluje, zpřesňuje, zmenšuje
+pravděpodobnost lidské chyby v~základních výpočtech a~umožňuje zpracovat ono
+velké množství dat.
+
+Data ovšem nejsou měřena bez nějakého účelu. Většinou se snažíme z~dat najít
+nějakou tendenci, změřit hodnotu závislosti či zkusit predikovat pomocí trendu,
+jak by vypadala data dosud nezměřená. Tyto problémy umíme řešit pomocí
+prokládání dat matematickými funkcemi. Proložení dat funkcí\footnote{známo také
+jako \emph{fitování} dat z~anglického \uv{fit}} nám umožňuje ověřit, zda
+předpis naší funkce odpovídá naměřeným datům, vypočítat neznámý parametr
+předpisu (rozšířeno například při počítání různých koeficientů materiálů), nebo
+vyjádření závislé veličiny pro zatím neměřené vstupní hodnoty (např.~predikce
+počtu nakažených nemocí).
+
+Abychom mohli data proložit křivkou, musíme znát její parametry. A~ty mohou být
+určeny pomocí metody nejmenších čtverců. Ovšem nemůžeme vytvářet křivky bez
+samotných dat.
+
+%\subsection{Termočlánek}
+Jak již bylo zmíněno, digitální měřící přístroje nahrazují přístroje analogové.
+Aby toho ovšem mohli dosáhnout, musí být schopné vytvářet signál přijatelný
+počítačem, což je v~velkém počtu případu změna napětí. 
+
+U~měření teploty můžeme například využít termoelektrického jevu, jenž dělá
+přesně to, co potřebujeme: při změně teploty se mění výstupní napětí. To jsme
+schopni měřit a~následně odvodit, jakou teplotu zrovna měříme. Jinak řečeno:
+objekty využívající termoelektrického jevu (tzv.~termočlánky) můžeme používat
+jako teploměry.
+
+Ovšem ne všechny termočlánky jsou identické. Každý typ termočlánku (respektive
+každá různá kombinace dvou kovů, z~nichž je termočlánek vyroben) má jinou
+závislost napětí na rozdílu teplot. Proto pro každou kombinaci musí být změřena
+experimentálně a~následně je pro ně určena ona závislost.
+
+V~této seminární práci si proto ukážeme a~vysvětlíme metodu nejmenších čtverců,
+kterou následně aplikujeme na naměřená data závislosti termoelektrického napětí
+na teplotním rozdílu mezi oběma konci termočlánku.
