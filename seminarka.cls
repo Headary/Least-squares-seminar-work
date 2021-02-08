@@ -19,8 +19,10 @@
 \RequirePackage[nobottomtitles]{titlesec} % change headins style
 \RequirePackage[
 	pdfusetitle,
+    pdfencoding=auto,
 	pdfproducer={Latex, or other tool},
-	pdfcreator={pdflatex, or other tool}
+	pdfcreator={pdflatex, or other tool},
+    hyperfigures
 ]{hyperref} % create links in file
 \RequirePackage{graphicx}
 \RequirePackage{fkssugar}
@@ -49,6 +51,7 @@
 \titleformat*{\subsubsection}{\bfseries\sffamily}
 \titleformat*{\paragraph}{\bfseries\sffamily}
 \titleformat*{\subparagraph}{\bfseries\sffamily}
+\renewcommand{\bottomtitlespace}{0.1\textheight}
 
 % -- Commands --
 \newcommand\@leader{N/A}

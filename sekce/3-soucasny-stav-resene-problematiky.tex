@@ -12,8 +12,7 @@ veličin vysledovat vztah mezi závislou a nezávislou veličinou. Nezávislou
 veličinou velice často bývá čas, ale také jí může být např. teplota, síla,
 poloha a další.\cite{praktikum}
 
-
-\subsubsection{Aproximace a Interpolace}
+\subsubsection{Aproximace a interpolace}
 Při prokládání bodů funkcí se můžeme přiklonit k jedné ze dvou metod: k
 aproximaci, nebo interpolaci.
 
@@ -41,7 +40,7 @@ Z tohoto důvodu je aproximace vhodnější při prokládání experimentálně 
 dat funkcí a umožňujeme nám porovnat jednotlivé předpisy funkcí a jejich
 korelaci s daty.
 
-\subsection{Metoda nejmenších čtverců}
+\subsubsection{Metoda nejmenších čtverců}
 Při našich experimentech měříme velké množství dat a přirozeně chceme všechna
 z nich využít v aproximaci naší funkce, čehož právě metoda nejmenších čtverců
 dosahuje. Ta je založena na principu, kdy se snažíme minimalizovat součet
@@ -70,9 +69,28 @@ parametrů funkce~$f(x)$ pro minimalizace funkce~$S$, pro kterou platí
 \eq{
     S = \nsum(y_i - f(x_i))^2\,.\\
 }
+Tento problém se řeší dvěma hlavními metodami: iterativně a analyticky.
 
+\paragraph{Iterativní řešení} je obecné, fungující pro každý předpis pracující
+na principu postupného iterování proměnných, kdy s každou iterací se funkce
+přibližuje správnému výsledku. Jsou využívány pro řešení nelineárních problému,
+které nejsem schopni analyticky řešení. Tato metoda je umožněna využitím
+optimalizovaných počítačových algoritmů, například pomocí
+Levenberg-Marquardtova algoritmu.
 
-\subsection{Lineární regrese}
+\paragraph{Analytické řešení} funguje na principu nalezení minima pomocí
+parciálních derivací podle všech neznámých parametrů. Z těchto derivací
+následně vzniká soustava rovnic, kterou jsme schopni vyřešit.  Je využívaná pro
+řešení lineárních problémů, kdy můžeme naší rovnici zapsat pomocí polynomu
+$n$-tého řádu.
+
+\subsubsection{Lineární regrese}
+Speciální případ analytického řešení je lineární regrese. Jedná se o případ, kdy
+experimentálně získaná data prokládáme lineární funkcí s obecným předpisem
+\eq{
+    f(x) = ax + b\,.
+}
+
 \eq[m]{
     S &= \nsum(y_i - f(x_i))^2\\
     f(x)= ax+b &\Rightarrow S = \nsum(y_i-ax_i-b)^2
