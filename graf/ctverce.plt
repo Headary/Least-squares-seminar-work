@@ -1,11 +1,11 @@
 set terminal epslatex size 15cm,9cm color
 set output "ctverce.tex"
 
-f(x) = x/2
+f(x) = -(x-6)**2/14 + (x-3)/5 + 5 
 
 set size ratio -1
-set xrange [-0.5:15.5]
-set yrange [-0.5:*]
+set xrange [0:14]
+set yrange [0:9]
 set xtics 1 nomirror
 set ytics 1 nomirror
 unset key
