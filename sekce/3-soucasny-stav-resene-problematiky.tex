@@ -47,6 +47,8 @@ z nich využít v aproximaci naší funkce, čehož právě metoda nejmenších 
 dosahuje. Ta je založena na principu, kdy se snažíme minimalizovat součet
 čtverců odchylek mezi naměřenými daty a aproximovanou funkcí.
 
+\plotfig{graf/ctverce.tex}[Ukázka metody nejmenších čtverců]
+
 Označme si naší teoretickou funkci jako $f(x)$, ve které figurují kupříkladu
 tři neznámé označené jako $a$, $b$ a $c$. Do funkce~$f$ tak vstupuje
 proměnná~$x$ a neznámé~$a,b,c$. Aproximace funkce pomocí metody nejmenších
@@ -108,7 +110,16 @@ neznámé.
 \eq[m]{
     \pder{S}{a} &= \nsum \(2\(y_i-ax_i-b\)*\(0-x_i-0\)\)\\
     \pder{S}{a} &= -2\nsum x_i\(y_i-ax_i-b\)
-}\vspace{-1cm}
+}
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\eq[m]{
+    \pder{S}{b} &= \nsum \(2\(y_i-ax_i-b\)*\(0-0-1\)\)\\
+    \pder{S}{b} &= -2\nsum \(y_i-ax_i-b\)
+}
+\end{minipage}
+
+\begin{minipage}{0.45\textwidth}
 \eq[m]{
     -2\nsum x_i\(y_i-ax_i-b\)&=0\\
     \nsum \(y_ix_i-ax_i^2-bx_i\)&=0\\
@@ -117,10 +128,6 @@ neznámé.
 }
 \end{minipage}
 \begin{minipage}{0.55\textwidth}
-\eq[m]{
-    \pder{S}{b} &= \nsum \(2\(y_i-ax_i-b\)*\(0-0-1\)\)\\
-    \pder{S}{b} &= -2\nsum \(y_i-ax_i-b\)
-}\vspace{-1cm}
 \eq[m]{
     -2\nsum \(y_i-ax_i-b\) &= 0\\
     \nsum y_i -\nsum ax_i -\nsum b &= 0\\
