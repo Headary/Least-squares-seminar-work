@@ -41,6 +41,7 @@ dat funkcí a umožňujeme nám porovnat jednotlivé předpisy funkcí a jejich
 korelaci s daty.
 
 \subsubsection{Metoda nejmenších čtverců}
+\label{sec:čtverce}
 Při našich experimentech měříme velké množství dat a přirozeně chceme všechna
 z nich využít v aproximaci naší funkce, čehož právě metoda nejmenších čtverců
 dosahuje. Ta je založena na principu, kdy se snažíme minimalizovat součet
@@ -67,16 +68,16 @@ v~bodě~$0$.
 Obecně tedy můžeme metodu nejmenších čtverců vyjádřit jako hledaní ideálních 
 parametrů funkce~$f(x)$ pro minimalizace funkce~$S$, pro kterou platí
 \eq{
-    S = \nsum(y_i - f(x_i))^2\,.\\
+    S = \nsum(y_i - f(x_i))^2\,.\lbl{eq:general_squares}\\
 }
 Tento problém se řeší dvěma hlavními metodami: iterativně a analyticky.
 
 \paragraph{Iterativní řešení} je obecné, fungující pro každý předpis pracující
 na principu postupného iterování proměnných, kdy s každou iterací se funkce
-přibližuje správnému výsledku. Jsou využívány pro řešení nelineárních problému,
-které nejsem schopni analyticky řešení. Tato metoda je umožněna využitím
-optimalizovaných počítačových algoritmů, například pomocí
-Levenberg-Marquardtova algoritmu.
+přibližuje správnému výsledku, dokud funkce nekonverguje. Jsou využívány pro
+řešení nelineárních problému, které nejsem schopni analyticky řešení. Tato
+metoda je umožněna využitím optimalizovaných počítačových algoritmů, například
+pomocí Levenberg-Marquardtova algoritmu.
 
 \paragraph{Analytické řešení} funguje na principu nalezení minima pomocí
 parciálních derivací podle všech neznámých parametrů. Z těchto derivací
@@ -84,17 +85,24 @@ následně vzniká soustava rovnic, kterou jsme schopni vyřešit.  Je využíva
 řešení lineárních problémů, kdy můžeme naší rovnici zapsat pomocí polynomu
 $n$-tého řádu.
 
+
 \subsubsection{Lineární regrese}
 Speciální případ analytického řešení je lineární regrese. Jedná se o případ, kdy
 experimentálně získaná data prokládáme lineární funkcí s obecným předpisem
 \eq{
     f(x) = ax + b\,.
 }
-
+V sekci~\ref{sec:čtverce} jsme si definovali rovnici~\eqref{eq:general_squares},
+do které tento obecný lineární předpis můžeme dosadit a tím si vyjádřit rovnici
+sumy konkrétně pro lineární funkci:
 \eq[m]{
-    S &= \nsum(y_i - f(x_i))^2\\
-    f(x)= ax+b &\Rightarrow S = \nsum(y_i-ax_i-b)^2
+    S = \nsum(y_i-ax_i-b)^2\,.
 }
+
+Abychom proložili data funkcí, musíme nalézt minimum funkce~$S$. Toho dosáhneme
+pomocí položení derivace této funkce rovnou nule, respektive položením
+jednotlivých parciálních derivací rovných nule, protože se zde nachází dvě
+neznámé. 
 
 \begin{minipage}{0.45\textwidth}
 \eq[m]{
@@ -108,7 +116,7 @@ experimentálně získaná data prokládáme lineární funkcí s obecným před
     a\nsumxx +b\nsumx&=\nsumxy
 }
 \end{minipage}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.55\textwidth}
 \eq[m]{
     \pder{S}{b} &= \nsum \(2\(y_i-ax_i-b\)*\(0-0-1\)\)\\
     \pder{S}{b} &= -2\nsum \(y_i-ax_i-b\)
@@ -120,17 +128,26 @@ experimentálně získaná data prokládáme lineární funkcí s obecným před
 }
 \end{minipage}
 
+Po jednotlivém derivování funkce~$S$ podle~$a$ a $b$ a upravení výrazů
+dostáváme dvě rovnice, ve kterých $a$ a $b$ figurují jako neznáme. To znamená,
+že se jedná o soustavu dvou rovnic o dvou neznámých, což můžeme jednoduše
+pomocí dosazovací metody vyřešit pro~$a$.
 \eq[m]{
-    a\nsumx+nb = \nsumy\quad&\Rightarrow\quad b=\frac{\nsumy-a\nsumx}{n}\\
+    a\nsumx+nb = \nsumy\quad&\Rightarrow\quad 
+        b=\frac{\nsumy-a\nsumx}{n}\lbl{eq:b_from_dev}\\
     a\nsumxx+b\nsumx=\nsumxy\quad&\Rightarrow\quad 
         a\nsumxx+\frac{\nsumy-a\nsumx}{n}\nsumx=\nsumxy
-}\vspace{-1cm}
+}
+
 \begin{gather*}
     a\nsumxx+\frac{n}\nsumy\nsumx-\frac{n}a\(\nsumx\)^2=\nsumxy\\
     an\nsumxx-a\(\nsumx\)^2=n\nsumxy-\nsumx\nsumy\\
     a=\frac{n\nsumxy-\nsumx\nsumy}{n\nsumxx-\(\nsumx\)^2}\lbl{eq:a}
 \end{gather*}
 
+A protože znamená rovnici~\eqref{eq:a} pro $a$, můžeme jí dosadit do dříve
+odvozené rovnice~\eqref{eq:b_from_dev} pro $b$, čímž dostáváme řešení této
+soustavy pro obě neznáme v podobě rovností~\eqref{eq:a} a~\eqref{eq:b}.
 \eq[m]{
     b&=\frac{\nsumy-a\nsumx}{n}\\
     b&=\frac{\nsumy-\frac{n\nsumxy-\nsumx\nsumy}{n\nsumxx-\(\nsumx\)^2}\nsumx}{n}\\
