@@ -1,2 +1,5 @@
 build/*
 !build/*.pdf
+GSS_SP_Manual.pdf
+Seznam\ prací.xlsx
+fks-vlnka.sh

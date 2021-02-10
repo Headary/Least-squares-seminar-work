@@ -79,7 +79,7 @@ příspěvková organizace
 
 \vspace{1.5cm}
 
-\includegraphics[width=0.3\textwidth]{gss.pdf}
+\includegraphics[width=0.3\textwidth]{figures/gss.pdf}
 
 \vspace{3cm}
 
