@@ -45,6 +45,18 @@
   style=iso-numeric     % or iso-numeric for numeric citation method
 ]{biblatex}
 
+\DefineBibliographyStrings{czech}{%
+  at           = {v},
+  bysupervisor = {vedouc\'{i} pr\'{a}ce},
+  urlfrom      = {dostupn\'{e} z},
+  urlalso      = {dostupn\'{e} tak\'{e} z},
+  director     = {re\v{z}is\'{e}r},
+  bydirector   = {re\v{z}ie},
+  inventor     = {vyn\'{a}lezce},
+  byinventor   = {vyn\'{a}lezce\addcolon},
+  online       = {online},
+  film         = {film}
+}
 % -- change headings to sans font --
 \titleformat*{\section}{\Large\bfseries\sffamily}
 \titleformat*{\subsection}{\large\bfseries\sffamily}
