@@ -1,34 +1,57 @@
 \subsection{Termoelektrický jev}
 \subsubsection{Efekty termoelektrické jevu}
-Termoelektrický jev se vyznačuje přímou konverzí tepla na elektrické napětí 
-a naopak. Objevuje se vždy u spojené dvojce různých kovů a ve své podstatě je sdružením
-třech efektů pod jeden název: efektu Seebecka, Peltierova a Thomsonova.
+Termoelektrický jev se vyznačuje přímou konverzí tepla na elektrické napětí
+a~naopak. Objevuje se vždy u spojené dvojce různých kovů a ve své podstatě je
+sdružením třech efektů pod jeden název: efektu Seebecka, Peltierova, Thomsonova
+a~Benedickova. \cite{praktikum}\cite{diplomka}
+
+Termoelektrické napětí~$U$ vznikající mezi spoji, je závislé a funkcí rozdílu
+teplot~$\Delta T = T_1 - T_2$. Je vyjádřeno pomocí funkce
+\eq{
+    U = \int_{T_1}^{T_2}\(\alpha\_B(T)-\alpha\_A(T)\)dT\,,
+}
+kde $\alpha\_A$ a $\alpha\_B$ jsou Seebeckekovy koeficienty kovů A a B a $T_1$
+a $T_2$ vyjadřují teploty spojů.  Tento vztah ovšem může být za podmínky
+nízkých teplot převeden do lineární formy
+\eq[m]{
+    U &= \(\alpha_A - \alpha_B\)*\(T_2 - T_1\)\,,\\
+    U &= \alpha\Delta T\,,
+}
+přičemž $\alpha$ značí koeficient pro danou dvojici kovů a $\Delta T$ je rozdíl
+teplot konců.\cite{diplomka}
+
+\fullfig[width=0.45\textwidth]{figures/termoclanek.eps}[Příklad zapojení termočlánku]
 
 \paragraph{Seebeckův efekt} byl poprvé objeven německým fyzikem Thomasem
 Johannem Seebeckem a popisuje vlastnost termočlánku, která má za příčinu
 vytváření elektrického napětí na základě rozdílu teplot. Jestliže jeden spoj
 termočlánku začneme zahřívat a druhý naopak ochlazovat, vznikne na každém konci
-jiný potenciál, což má za důvod vzniku termoelektrického napětí. \cite{jreichl-seebeck}
+jiný potenciál, což má za důvod vzniku termoelektrického napětí.
+\cite{jreichl-seebeck}
 
 \paragraph{Peltierův efekt} je považován za přesným opak efektu Seebeckova. Byl
 objeven Jeanem Peltierem v roce 1834 a~dokazuje, že při změna potenciálů, tedy
-protékání proudu, může způsobit změnu teplot. To implikuje přenos tepla z
-jednoho konce na druhý, což může být využito například pro chlazení předmětu
-bez nutnosti jakýchkoliv pohybujících se součástek.
-\cite{peltier}
+protékání proudu, může způsobit změnu teplot. To implikuje přenos tepla
+z~jednoho konce na druhý, což může být využito například pro chlazení předmětu
+bez nutnosti jakýchkoliv pohybujících se součástek.\cite{peltier}
 
 \paragraph{Thomsův efekt} je třetí a poslední efekt v rámci termoelektrického
 jevu.  Popisuje vlastnost vodiče při zahřívání jednoho z jeho konců. Při
 zahřívání vodiče na jednom konci vzniká uvnitř materiálu teplotní gradient
 $\Delta T/\Delta l$, což vytváří mezi konci malé termoelektrické napětí. Je tím
 tedy velice podobný Seebeckovu efektu, ovšem zde se jedná pouze o jeden vodič
-namísto dvou různých kovů.
-\cite{jreichl-thomson}
+namísto dvou různých kovů. \cite{jreichl-thomson}
+
+\paragraph{Benedickův efekt} nebylo po dlouho dobu možno dobře kvantitativně
+měřit.  Je-li ve vodiči teplotní gradient i přes to, že teploty obou konců jsou
+identické, vzniká na koncích vodiče rozdíl potenciálů.
 
 \subsubsection{Termočlánky}
 Jako termočlánky nazýváme zařízení, které se skládá ze dvou, spolu spojených,
-druhů kovu. Protože se zde projevuje termoelektrický jev, především tedy Seebeckův
-efekt, může být termočlánek využívám jako teploměr měřící rozdíl od referenčí
-teploty.
+druhů kovu. 
+
+%Protože se zde projevuje termoelektrický jev, především tedy Seebeckův
+%efekt, může být termočlánek využívám jako teploměr měřící rozdíl od referenčí
+%teploty.
 
 \subsubsection{Experiment}
