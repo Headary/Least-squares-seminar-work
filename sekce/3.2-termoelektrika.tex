@@ -17,8 +17,8 @@ nízkých teplot převeden do lineární formy
     U &= \(\alpha_A - \alpha_B\)*\(T_2 - T_1\)\,,\\
     U &= \alpha\Delta T\,,
 }
-přičemž $\alpha$ značí koeficient pro danou dvojici kovů a $\Delta T$ je rozdíl
-teplot konců.~\cite{diplomka}
+přičemž $\alpha$ značí koeficient pro danou dvojici kovů (také označován jako
+parametr termočlánku) a $\Delta T$ je rozdíl teplot konců.~\cite{diplomka}
 
 \fullfig[width=0.45\textwidth]{figures/termoclanek.eps}[Příklad zapojení
 termočlánku]
@@ -49,10 +49,38 @@ identické, vzniká na koncích vodiče rozdíl potenciálů.~\cite{diplomka}
 
 \subsubsection{Termočlánky}
 Jako termočlánky nazýváme zařízení, které se skládá ze dvou, spolu spojených,
-druhů kovu. 
+druhů kovu. Ty svým spojením vytváření elektrický obvod. Jestliže budeme
+zahřívat jeden spoj kovů a ochlazovat druhý, můžeme pozorovat v tomto obvodu
+napětí, a tedy i proud, důsledkem termoelektrického jevu. Toto napětí je ale
+velice malé řádově v milivoltech.
 
-%Protože se zde projevuje termoelektrický jev, především tedy Seebeckův
-%efekt, může být termočlánek využívám jako teploměr měřící rozdíl od referenčí
-%teploty.
+Různé kombinace materiálů mají různé parametry pro vytvoření termoelektrického 
+napětí. Teoretickou hodnotu měřeného napětí můžeme zjistit z termoelektrických
+potenciálů daných vodičů. Příklad takových hodnot je uveden 
+v~tabulce~\ref{tab:termoelectric_potencial}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lc|lc|lc}
+        \toprule
+        Materiál & \popi{\phi}{mV} & Materiál & \popi{\phi}{mV} & 
+        Materiál &\popi{\phi}{mV}\\
+        \midrule
+        křemík   & +45   & rhodium  & +0.65 & tuha       & +0.2\\
+        antimon  & +4.7  & iridium  & +0.65 & rtuť       &  0.0\\
+        železo   &  1.8  & manganin & +0.6  & platina    &  0.0\\
+        molybden & +1.2  & tantal   & +0.5  & sodík      & -0.2\\
+        kadmium  &  0.9  & cesium   & +0.5  & palladium  & -0.3\\
+        wolfram  & +0.8  & cín      & +0.45 & draslík    & -0.9\\
+        měď      & +0.75 & olovo    & +0.45 & nikl       & -1.5\\
+        zlato    & +0.7  & hořčík   & +0.4  & kobalt     & -1.6\\
+        stříbro  & +0.7  & hliník   & +0.4  & konstantan & -3.4\\
+        zinek    & +0.7  & grafit   & +0.3  & vismut     & -7\\
+        \bottomrule
+    \end{tabular}
+    \caption{Hodnoty termoelektrického potenciálu pro různé materiály pro 
+    rozdíl teplot~$100\,\C$. \cite{fyzikalnicv}}
+    \label{tab:termoelectric_potencial}
+\end{table}
 
 \subsubsection{Experiment}

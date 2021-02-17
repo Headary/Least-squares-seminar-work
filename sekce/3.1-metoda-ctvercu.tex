@@ -17,15 +17,17 @@ aproximaci, nebo interpolaci.
 
 \paragraph{Interpolace} je proces, kdy se snažíme nalézt funkci, která propojí
 všechny nám známé body. Nejjednodušší metodou, jak toho dosáhnout, je využít
-lineární interpolace, kdy jednotlivé body propojíme přímkou. Můžeme se s ní
-setkat například při vytváření grafů v tabulkových editorech (např. MS Excel či
-LibreOffice Calc), kdy propojení bodů přímkou je obvykle výchozí možnost
-vykreslování grafů. Nevýhoda této metody je ovšem ostrost funkce, kdy sice je
-spojitá, ale není diferencovatelná na celém svém oboru. Kvůli své ostrosti
-zároveň tato metoda mnohdy nepředstavuje reálný průběh původní funkce.
+lineární interpolace, kdy každé dvě po sobě následující hodnoty propojíme
+přímkou. Můžeme se s ní setkat například při vytváření grafů v tabulkových
+editorech (např. MS Excel či LibreOffice Calc), kdy propojení bodů přímkou je
+obvykle výchozí možnost vykreslování grafů. Nevýhoda této metody je ovšem
+ostrost funkce, kdy sice je spojitá, ale není diferencovatelná na celém svém
+definičním oboru. Kvůli své ostrosti zároveň tato metoda mnohdy nepředstavuje
+reálný průběh původní funkce.
 
 Tyto problémy řeší méně rozšířené metody, jakými jsou kupříkladu kvadratická
-interpolace či interpolace polynomem. Ty zmenšují interpolační odchylky a díky
+interpolace či interpolace vyšším polynomem (příkladem může být známý a
+rozšířený Lagrangeův polynom) . Ty zmenšují interpolační odchylky a díky
 definici polynomem jsou diferencovatelné na celé definičním oboru. Ovšem jsou
 také složitější na spočítání, jak už z pohledu matematiky, tak z pohledu
 výpočetního výkonu.
@@ -105,59 +107,77 @@ pomocí položení derivace této funkce rovnou nule, respektive položením
 jednotlivých parciálních derivací rovných nule, protože se zde nachází dvě
 neznámé. 
 
-\begin{minipage}{0.45\textwidth}
-\eq[m]{
-    \pder{S}{a} &= \nsum \(2\(y_i-ax_i-b\)*\(0-x_i-0\)\)\\
-    \pder{S}{a} &= -2\nsum x_i\(y_i-ax_i-b\)
-}
-\end{minipage}
-\begin{minipage}{0.55\textwidth}
-\eq[m]{
-    \pder{S}{b} &= \nsum \(2\(y_i-ax_i-b\)*\(0-0-1\)\)\\
-    \pder{S}{b} &= -2\nsum \(y_i-ax_i-b\)
-}
-\end{minipage}
+%\begin{minipage}{0.45\textwidth}
+%\eq{
+%    \pder{S}{a} &= \nsum \(2\(y_i-ax_i-b\)*\(0-x_i-0\)\)\\
+%    \pder{S}{a} = -2\nsum x_i\(y_i-ax_i-b\)
+%}
+%\end{minipage}
+%\begin{minipage}{0.55\textwidth}
+%\eq{
+%    \pder{S}{b} &= \nsum \(2\(y_i-ax_i-b\)*\(0-0-1\)\)\\
+%    \pder{S}{b} = -2\nsum \(y_i-ax_i-b\)
+%}
+%\end{minipage}
+%
+%\begin{minipage}{0.45\textwidth}
+%\eq[m]{
+%    -2\nsum x_i\(y_i-ax_i-b\)&=0\\
+%    \nsum \(y_ix_i-ax_i^2-bx_i\)&=0\\
+%    \nsum y_ix_i -\nsum ax_i^2 -\nsum bx_i&=0\\
+%    a\nsumxx +b\nsumx&=\nsumxy
+%}
+%\end{minipage}
+%\begin{minipage}{0.55\textwidth}
+%\eq[m]{
+%    -2\nsum \(y_i-ax_i-b\) &= 0\\
+%    \nsum y_i -\nsum ax_i -\nsum b &= 0\\
+%    a\nsumx + nb &= \nsumy
+%}
+%\end{minipage}
 
 \begin{minipage}{0.45\textwidth}
-\eq[m]{
-    -2\nsum x_i\(y_i-ax_i-b\)&=0\\
-    \nsum \(y_ix_i-ax_i^2-bx_i\)&=0\\
-    \nsum y_ix_i -\nsum ax_i^2 -\nsum bx_i&=0\\
-    a\nsumxx +b\nsumx&=\nsumxy
-}
+    \begin{gather*}
+        \pder{S}{a} = -2\nsum x_i\(y_i-ax_i-b\)\\
+        -2\nsum x_i\(y_i-ax_i-b\)=0\\
+        a\nsumx + nb = \nsumy \lbl{eq:a_def}
+    \end{gather*} 
 \end{minipage}
-\begin{minipage}{0.55\textwidth}
-\eq[m]{
-    -2\nsum \(y_i-ax_i-b\) &= 0\\
-    \nsum y_i -\nsum ax_i -\nsum b &= 0\\
-    a\nsumx + nb &= \nsumy
-}
+\begin{minipage}{0.50\textwidth}
+    \begin{gather*}
+        \pder{S}{b} = -2\nsum \(y_i-ax_i-b\)\\
+        -2\nsum \(y_i-ax_i-b\) = 0\\
+        a\nsumx + nb = \nsumy \lbl{eq:b_def}
+    \end{gather*} 
 \end{minipage}
+\hspace{0cm}
 
 Po jednotlivém derivování funkce~$S$ podle~$a$ a $b$ a upravení výrazů
-dostáváme dvě rovnice, ve kterých $a$ a $b$ figurují jako neznáme. To znamená,
-že se jedná o soustavu dvou rovnic o dvou neznámých, což můžeme jednoduše
-pomocí dosazovací metody vyřešit pro~$a$.
+dostáváme dvě rovnice~\eqref{eq:a_def} a~\eqref{eq:b_def}. Ty nám popisují onu
+lineární funkci jíž aproximujeme a $a$ a $b$ zde figurují jako proměnné. Ty
+ovšem v tento moment neznáme, tedy efektivně to jsou v tomto případě neznámé.
+To znamená, že se jedná o soustavu dvou rovnic o dvou neznámých, což můžeme
+jednoduše pomocí dosazovací metody vyřešit pro~$a$.
 \eq[m]{
     a\nsumx+nb = \nsumy\quad&\Rightarrow\quad 
-        b=\frac{\nsumy-a\nsumx}{n}\lbl{eq:b_from_dev}\\
+        b=\frac{\nsumy-a\nsumx}{n}\lbl{eq:b_from_def}\\
     a\nsumxx+b\nsumx=\nsumxy\quad&\Rightarrow\quad 
         a\nsumxx+\frac{\nsumy-a\nsumx}{n}\nsumx=\nsumxy
 }
-
+\vspace{-6.7ex}
 \begin{gather*}
     a\nsumxx+\frac{n}\nsumy\nsumx-\frac{n}a\(\nsumx\)^2=\nsumxy\\
-    an\nsumxx-a\(\nsumx\)^2=n\nsumxy-\nsumx\nsumy\\
+%    an\nsumxx-a\(\nsumx\)^2=n\nsumxy-\nsumx\nsumy\\
     a=\frac{n\nsumxy-\nsumx\nsumy}{n\nsumxx-\(\nsumx\)^2}\lbl{eq:a}
 \end{gather*}
 
-A protože znamená rovnici~\eqref{eq:a} pro $a$, můžeme jí dosadit do dříve
-odvozené rovnice~\eqref{eq:b_from_dev} pro $b$, čímž dostáváme řešení této
+A protože máme rovnici~\eqref{eq:a} pro $a$, můžeme jí dosadit do dříve
+odvozené rovnice~\eqref{eq:b_from_def} pro $b$, čímž dostáváme řešení této
 soustavy pro obě neznáme v podobě rovností~\eqref{eq:a} a~\eqref{eq:b}.
 \eq[m]{
     b&=\frac{\nsumy-a\nsumx}{n}\\
     b&=\frac{\nsumy-\frac{n\nsumxy-\nsumx\nsumy}{n\nsumxx-\(\nsumx\)^2}\nsumx}{n}\\
-    b&=\frac{n\nsumxx\nsumy-\nsumy\(\nsumx\)^2-n\nsumxy\nsumx+\nsumy\(\nsumx\)^2}
-    {n^2\nsumxx-n\(\nsumx\)^2}\\
+%    b&=\frac{n\nsumxx\nsumy-\nsumy\(\nsumx\)^2-n\nsumxy\nsumx+\nsumy\(\nsumx\)^2}
+%    {n^2\nsumxx-n\(\nsumx\)^2}\\
     b&=\frac{\nsumxx\nsumy-n\nsumxy\nsumx}{n\nsumxx-\(\nsumx\)^2}\lbl{eq:b}
 }

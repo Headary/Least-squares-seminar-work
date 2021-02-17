@@ -27,6 +27,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{fkssugar}
 \RequirePackage{krskasugar}
+\RequirePackage{booktabs}
 
 \RequirePackage{fancyhdr} % enable changing header and footer
 \fancyhf{}
