@@ -5,12 +5,19 @@
 \LoadClass{extarticle}
 
 % -- Load packages --
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
+\RequirePackage[english,czech]{babel} % the main document language is the last one
+\RequirePackage{fontspec}
 \RequirePackage{lmodern} % specify used font
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
+
+% citations 
+\RequirePackage[
+  backend=biber,        % if we want unicode and many other features (biber is already by default)
+  style=iso-numeric     % or iso-numeric for numeric citation method
+]{biblatex}
+
 \RequirePackage[
 	pdftex,
     margin=2.5cm,
@@ -19,10 +26,10 @@
 \RequirePackage[nobottomtitles]{titlesec} % change headins style
 \RequirePackage[
 	pdfusetitle,
-    pdfencoding=auto,
 	pdfproducer={Latex, or other tool},
 	pdfcreator={pdflatex, or other tool},
-    hyperfigures
+    hyperfigures,
+    psdextra
 ]{hyperref} % create links in file
 \RequirePackage{graphicx}
 \RequirePackage{fkssugar}
@@ -38,13 +45,6 @@
 
 \RequirePackage{setspace}
 \onehalfspacing
-
-% citations 
-\RequirePackage[english,czech]{babel} % the main document language is the last one
-\RequirePackage[
-  backend=biber,        % if we want unicode and many other features (biber is already by default)
-  style=iso-numeric     % or iso-numeric for numeric citation method
-]{biblatex}
 
 \DefineBibliographyStrings{czech}{%
   at           = {v},
