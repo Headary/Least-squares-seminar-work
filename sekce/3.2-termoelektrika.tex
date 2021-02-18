@@ -20,7 +20,7 @@ nízkých teplot převeden do lineární formy
 přičemž $\alpha$ značí koeficient pro danou dvojici kovů (také označován jako
 parametr termočlánku) a $\Delta T$ je rozdíl teplot konců.~\cite{diplomka}
 
-\fullfig[width=0.45\textwidth]{figures/termoclanek.eps}[Příklad zapojení
+\fullfig[width=0.5\textwidth]{figures/termoclanek.eps}[Příklad zapojení
 termočlánku]
 
 \paragraph{Seebeckův efekt} byl poprvé objeven německým fyzikem Thomasem
@@ -78,9 +78,35 @@ v~tabulce~\ref{tab:termoelectric_potencial}.
         zinek    & +0.7  & grafit   & +0.3  & vismut     & -7\\
         \bottomrule
     \end{tabular}
-    \caption{Hodnoty termoelektrického potenciálu pro různé materiály pro 
-    rozdíl teplot~$100\,\C$. \cite{fyzikalnicv}}
+    \caption{Hodnoty termoelektrického potenciálu při rozdílu 
+    teplot~$100\,\C$.~\cite{fyzikalnicv}}
     \label{tab:termoelectric_potencial}
+\end{table}
+
+Samozřejmě některé kombinace kovů jsou efektivnější než ostatní, proto
+byl vytvořen standart~\emph{IEC 584}, což je mezinárodní standart popisující
+různé efektivní kombinace prvků a slitin (viz.~tabulka~\ref{tab:iec584}).
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cm{7cm}c}
+        \toprule
+        Označení typu & Materiál & Teplotní rozsah v $\C$\\
+        \midrule
+        T & měď a konstantan (CuNi) & $-200$ -- 350\phantom{1 }\\
+        J & železo a konstantan (CuNi)& $-200$ -- 750\phantom{1 }\\
+        E & chromel (NiCr) a konstantan (CuNi) & $-100$ -- 900\phantom{1 }\\
+        K & chromel (NiCr) a alumen (NiAl) & $-200$ -- 1~200\\
+        N & nicrosil (NiCrSi) a nisil (NiSi) & $-200$ -- 1~200\\
+        S & platina a slitina platiny a~10~\% rhodia & \phantom{$-00$}0 -- 1~600\\
+        R & platina a slitina platiny a~13~\% rhodia & \phantom{$-00$}0 -- 1~600\\
+        B & slitina platiny a~30~\% rhodia a~slitina platiny 
+        a~6~\% rhodia & \phantom{$-$}300 -- 1~700\\
+        \bottomrule
+    \end{tabular}
+    \caption{Typy termočlánků a jejich označení dle 
+    standartu~\emph{IEC 584}.~\cite{diplomka,iec584}}
+    \label{tab:iec584}
 \end{table}
 
 \subsubsection{Experiment}
