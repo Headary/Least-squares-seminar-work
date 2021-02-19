@@ -1,6 +1,3 @@
-#set terminal epslatex size 15cm,9cm color
-#set output "ctverce.tex"
-
 f(x) = -(x-6)**2/14 + (x-3)/5 + 5 
 
 set size ratio -1

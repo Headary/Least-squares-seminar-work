@@ -7,6 +7,8 @@
 % -- Load packages --
 \RequirePackage[english,czech]{babel} % the main document language is the last one
 \RequirePackage{fontspec}
+\RequirePackage{polyglossia}
+\setmainlanguage{czech}
 \RequirePackage{lmodern} % specify used font
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}

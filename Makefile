@@ -13,7 +13,8 @@ build/seminarka.pdf: $(DEP)
 figures/%.eps: figures/%.src.svg
 	inkscape $< -o $@
 
-graf/ctverce.tex: graf/ctverce.src.plt graf/ctverce.dat
-graf/%.tex: graf/%.src.plt Makefile
-	cd graf && gnuplot -e "set format '$$\"%g\"$$' ; set terminal epslatex color size 15.7cm,8.4cm; set output '$(@F)' " $(<F)
+#graf/ctverce.tex: graf/ctverce.src.plt graf/ctverce.dat
+graf/%.tex: graf/%.src.plt
+graf/%.tex: graf/%.src.plt graf/%.dat
+	cd graf && gnuplot -e "set format '$$\"%g\"$$'; set terminal epslatex color size 14.7cm,8.4cm; set output '$(@F)'" $(<F)
 	sed -i -e "s/\\includegraphics\[\(.*\)\]{\(.*\)}}/\\includegraphics\[\1\]{graf\/\2.eps}}/" $@
