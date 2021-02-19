@@ -137,22 +137,22 @@ neznámé.
 %    a\nsumx + nb &= \nsumy
 %}
 %\end{minipage}
-
-\begin{minipage}{0.45\textwidth}
+\noindent
+\begin{minipage}{0.49\linewidth}
     \begin{gather*}
         \pder{S}{a} = -2\nsum x_i\(y_i-ax_i-b\)\\
         -2\nsum x_i\(y_i-ax_i-b\)=0\\
         a\nsumx + nb = \nsumy \lbl{eq:a_def}
     \end{gather*} 
 \end{minipage}
-\begin{minipage}{0.50\textwidth}
+\begin{minipage}{0.50\linewidth}
     \begin{gather*}
         \pder{S}{b} = -2\nsum \(y_i-ax_i-b\)\\
         -2\nsum \(y_i-ax_i-b\) = 0\\
         a\nsumx + nb = \nsumy \lbl{eq:b_def}
     \end{gather*} 
 \end{minipage}
-\hspace{0cm}
+\vspace{0cm}
 
 Po jednotlivém derivování funkce~$S$ podle~$a$ a $b$ a upravení výrazů
 dostáváme dvě rovnice~\eqref{eq:a_def} a~\eqref{eq:b_def}. Ty nám popisují onu
@@ -164,14 +164,14 @@ jednoduše pomocí dosazovací metody vyřešit pro~$a$.
     a\nsumx+nb = \nsumy\quad&\Rightarrow\quad 
         b=\frac{\nsumy-a\nsumx}{n}\lbl{eq:b_from_def}\\
     a\nsumxx+b\nsumx=\nsumxy\quad&\Rightarrow\quad 
-        a\nsumxx+\frac{\nsumy-a\nsumx}{n}\nsumx=\nsumxy
+        a\nsumxx+\frac{\nsumy-a\nsumx}{n}\nsumx=\nsumxy\\
+    a&=\frac{n\nsumxy-\nsumx\nsumy}{n\nsumxx-\(\nsumx\)^2}\lbl{eq:a}
 }
-\vspace{-6.7ex}
-\begin{gather*}
-    a\nsumxx+\frac{n}\nsumy\nsumx-\frac{n}a\(\nsumx\)^2=\nsumxy\\
+%\vspace{-6.7ex}
+%\begin{gather*}
+%    a\nsumxx+\frac{n}\nsumy\nsumx-\frac{n}a\(\nsumx\)^2=\nsumxy\\
 %    an\nsumxx-a\(\nsumx\)^2=n\nsumxy-\nsumx\nsumy\\
-    a=\frac{n\nsumxy-\nsumx\nsumy}{n\nsumxx-\(\nsumx\)^2}\lbl{eq:a}
-\end{gather*}
+%\end{gather*}
 
 A protože máme rovnici~\eqref{eq:a} pro $a$, můžeme jí dosadit do dříve
 odvozené rovnice~\eqref{eq:b_from_def} pro $b$, čímž dostáváme řešení této
