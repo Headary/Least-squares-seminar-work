@@ -20,7 +20,7 @@ set style line 2 lc rgb "#000000" lw 4 dt 2 ps 2
 #set arrow 2 from graph 0.92,0 to graph 1,0 filled size screen 0.2,3
 
 plot g(x,0.5,3.5) title "$f(x)$" ls 1, \
-    "deltas.dat" using 1:(f($1)):(0):2 with vectors nohead ls 2 notitle, \
-    "deltas.dat" using ($1-0.15):(f($1)+$2/2):3 with labels notitle, \
-    "deltas.dat" using 1:(f($1)+$2) ls 2 pt 6 notitle, \
-    "deltas.dat" using 1:(f($1)) ls 2 pt 7 notitle
+    "deltas.src.dat" using 1:(f($1)):(0):2 with vectors nohead ls 2 notitle, \
+    "deltas.src.dat" using ($1-0.15):(f($1)+$2/2):3 with labels notitle, \
+    "deltas.src.dat" using 1:(f($1)+$2) ls 2 pt 6 notitle, \
+    "deltas.src.dat" using 1:(f($1)) ls 2 pt 7 notitle

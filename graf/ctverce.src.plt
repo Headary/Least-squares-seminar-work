@@ -9,5 +9,5 @@ unset key
 set border 3
 set style rectangle back fc rgb "gray" fs solid 0.5 border -1
 
-load "ctverce2.dat"
-plot "ctverce.dat" ls 2 lc rgb "black", f(x) dt 2 lc rgb "black" lw 2
+load "ctverce2.src.dat"
+plot "ctverce.src.dat" ls 2 lc rgb "black", f(x) dt 2 lc rgb "black" lw 2

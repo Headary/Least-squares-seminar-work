@@ -1,7 +1,7 @@
 from random import random, choice
 
-data = open("ctverce.dat", "w+")
-squares = open("ctverce2.dat", "w+")
+data = open("ctverce.src.dat", "w+")
+squares = open("ctverce2.src.dat", "w+")
 interval = 1.5
 
 
