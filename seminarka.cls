@@ -7,8 +7,10 @@
 % -- Load packages --
 \RequirePackage[english,czech]{babel} % the main document language is the last one
 \RequirePackage{fontspec}
+\RequirePackage{csquotes}
 \RequirePackage{polyglossia}
 \setmainlanguage{czech}
+\setotherlanguage{english}
 \RequirePackage{lmodern} % specify used font
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
@@ -26,17 +28,18 @@
 	headheight=12pt]{geometry}
 \RequirePackage{lastpage} % get number of pages
 \RequirePackage[nobottomtitles]{titlesec} % change headins style
+\RequirePackage{graphicx}
+\RequirePackage{krskasugar}
+\RequirePackage{booktabs}
 \RequirePackage[
 	pdfusetitle,
 	pdfproducer={Latex, or other tool},
 	pdfcreator={pdflatex, or other tool},
     hyperfigures,
+    hyperfootnotes=false,
     psdextra
 ]{hyperref} % create links in file
-\RequirePackage{graphicx}
 \RequirePackage{fkssugar}
-\RequirePackage{krskasugar}
-\RequirePackage{booktabs}
 
 \RequirePackage{fancyhdr} % enable changing header and footer
 \fancyhf{}
