@@ -12,3 +12,8 @@ Dostupná jako soubor pdf: [build/seminarka.pdf](./build/seminarka.pdf)
 | grafy                     | `gnuplot`         |
 | obrázky                   | `inkscape`        |
 
+Dependencies:
+* make
+* gnuplot
+* inkscape
+* xelatex, latexmk
