@@ -63,23 +63,25 @@ napětí. Teoretickou hodnotu měřeného napětí můžeme zjistit z termoelekt
 potenciálů daných vodičů. Příklad takových hodnot je uveden 
 v~tabulce~\ref{tab:termoelectric_potencial}.
 
+\newcommand{\phm}{\phantom{-}}
+
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{lc|lc|lc}
+    \begin{tabular}{ll|ll|lc}
         \toprule
         Materiál & \popi{\phi}{mV} & Materiál & \popi{\phi}{mV} & 
         Materiál &\popi{\phi}{mV}\\
         \midrule
-        křemík   & +45   & rhodium  & +0,65 & tuha       & +0,2\\
-        antimon  & +4,7  & iridium  & +0,65 & rtuť       &  0,0\\
-        železo   &  1,8  & manganin & +0,6  & platina    &  0,0\\
-        molybden & +1,2  & tantal   & +0,5  & sodík      & -0,2\\
-        kadmium  &  0,9  & cesium   & +0,5  & palladium  & -0,3\\
-        wolfram  & +0,8  & cín      & +0,45 & draslík    & -0,9\\
-        měď      & +0,75 & olovo    & +0,45 & nikl       & -1,5\\
-        zlato    & +0,7  & hořčík   & +0,4  & kobalt     & -1,6\\
-        stříbro  & +0,7  & hliník   & +0,4  & konstantan & -3,4\\
-        zinek    & +0,7  & grafit   & +0,3  & vismut     & -7\\
+        křemík   & 45   & rhodium  & 0,65 & tuha       & $"\phm0,2"$\\
+        antimon  & 4,7  & iridium  & 0,65 & rtuť       & $"\phm0,0"$\\
+        železo   & 1,8  & manganin & 0,6  & platina    & $"\phm0,0"$\\
+        molybden & 1,2  & tantal   & 0,5  & sodík      & $"-0,2"$\\
+        kadmium  & 0,9  & cesium   & 0,5  & palladium  & $"-0,3"$\\
+        wolfram  & 0,8  & cín      & 0,45 & draslík    & $"-0,9"$\\
+        měď      & 0,75 & olovo    & 0,45 & nikl       & $"-1,5"$\\
+        zlato    & 0,7  & hořčík   & 0,4  & kobalt     & $"-1,6"$\\
+        stříbro  & 0,7  & hliník   & 0,4  & konstantan & $"-3,4"$\\
+        zinek    & 0,7  & grafit   & 0,3  & vismut     & $"-7\phantom{,0}"$\\
         \bottomrule
     \end{tabular}
     \caption{Hodnoty termoelektrického potenciálu při rozdílu 
