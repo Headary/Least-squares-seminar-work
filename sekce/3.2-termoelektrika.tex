@@ -2,20 +2,20 @@
 \subsubsection{Efekty termoelektrické jevu}
 Termoelektrický jev se vyznačuje přímou konverzí tepla na elektrické napětí
 a~naopak. Objevuje se vždy u spojené dvojce různých kovů a ve své podstatě je
-sdružením třech efektů pod jeden název: efektu Seebecka, Peltierova, Thomsonova
+sdružením čtyřech efektů pod jeden název: efektu Seebecka, Peltierova, Thomsonova
 a~Benedickova.~\cite{praktikum,diplomka}
 
-Termoelektrické napětí~$U$ vznikající mezi spoji, je závislé a funkcí rozdílu
-teplot~$\Delta T = T_1 - T_2$. Je vyjádřeno pomocí funkce
+Termoelektrické napětí~$E$ vznikající mezi spoji kovů a je závislé na funkci
+rozdílu teplot~$\Delta T = T_1 - T_2$. Je vyjádřeno pomocí vztahu
 \eq{
-    U = \int_{T_1}^{T_2}\(\alpha\_B(T)-\alpha\_A(T)\)dT\,,
+    E = \int_{T_1}^{T_2}\(\alpha\_B(T)-\alpha\_A(T)\)dT\,,
 }
 kde $\alpha\_A$ a $\alpha\_B$ jsou Seebeckekovy koeficienty kovů A a B a $T_1$
 a $T_2$ vyjadřují teploty spojů.  Tento vztah ovšem může být za podmínky
-nízkých teplot převeden do lineární formy
+nízkého rozdílu teplot převeden do lineární formy
 \eq[m]{
-    U &= \(\alpha_A - \alpha_B\)*\(T_2 - T_1\)\,,\\
-    U &= \alpha\Delta T\,,
+    E &= \(\alpha_A - \alpha_B\)*\(T_2 - T_1\)\,,\\
+    E &= \alpha\Delta T\,,
 }
 přičemž $\alpha$ značí koeficient pro danou dvojici kovů (také označován jako
 parametr termočlánku) a $\Delta T$ je rozdíl teplot konců.~\cite{diplomka}
@@ -28,32 +28,32 @@ jiný potenciál, což má za důvod vzniku termoelektrického
 napětí.~\cite{jreichl-seebeck}
 
 \paragraph{Peltierův efekt} je považován za přesným opak efektu Seebeckova. Byl
-objeven Jeanem Peltierem v roce 1834 a~dokazuje, že při změna potenciálů, tedy
+objeven Jeanem Peltierem v roce 1834 a~dokazuje, že změna potenciálů, tedy
 protékání proudu, může způsobit změnu teplot. To implikuje přenos tepla
 z~jednoho konce na druhý, což může být využito například pro chlazení předmětu
 bez nutnosti jakýchkoliv pohybujících se součástek.~\cite{peltier}
 
-\paragraph{Thomsův efekt} je třetí a poslední efekt v rámci termoelektrického
-jevu.  Popisuje vlastnost vodiče při zahřívání jednoho z jeho konců. Při
-zahřívání vodiče na jednom konci vzniká uvnitř materiálu teplotní gradient
-$\Delta T/\Delta l$, což vytváří mezi konci malé termoelektrické napětí. Je tím
-tedy velice podobný Seebeckovu efektu, ovšem zde se jedná pouze o jeden vodič
-namísto dvou různých kovů.~\cite{jreichl-thomson}
+\paragraph{Thomsonův efekt} je třetí efekt v rámci termoelektrického jevu.
+Popisuje vlastnost vodiče při zahřívání jednoho z jeho konců. Zahříváním
+jednoho konce vodiče vzniká uvnitř materiálu teplotní gradient~$\Delta T/\Delta l$, 
+což vytváří mezi konci malé termoelektrické napětí. Je tím tedy velice
+podobný Seebeckovu efektu, ovšem zde se jedná pouze o jeden vodič namísto dvou
+různých kovů.~\cite{jreichl-thomson}
 
 \paragraph{Benedickův efekt} pojednává o vzniku velice malého rozdílu
 potenciálů na koncích vodiče i v případě, že oba konce mají stejnou teplotu.
-Aby tak ale nastalo musí ve vodiči existovat teplotní gradient, jenž tento
+Aby tak ale nastalo, musí ve vodiči existovat teplotní gradient, jenž tento
 rozdíl potenciálů způsobí.~\cite{diplomka} 
 %I když byl tento efekt objeven v~letech~1920 a~1921
 %C.~Benedicksem, po dlouhou dobu nebyl experimentálně prokázán, právě z důvodu
 %velice malé, až neměřitelné, velikosti rozdílu potenciálů.
 
 \subsubsection{Termočlánky}
-Jako termočlánky nazýváme zařízení, které se skládá ze dvou, spolu spojených,
+Jako termočlánky nazýváme zařízení skládající se ze dvou, spolu spojených,
 druhů kovu. Ty svým spojením vytváření elektrický obvod. Jestliže budeme
-zahřívat jeden spoj kovů a ochlazovat druhý, můžeme pozorovat v tomto obvodu
-napětí, a tedy i proud, důsledkem termoelektrického jevu. Toto napětí je ale
-velice malé řádově v milivoltech.
+zahřívat jeden spoj kovů a ochlazovat druhý, můžeme v tomto obvodu důsledkem
+termoelektrického jevu pozorovat napětí. Toto napětí je ale velice malé, řádově
+pohybující se v milivoltech.
 
 \fullfig[width=0.5\textwidth]{figures/termoclanek.eps}[Příklad zapojení
 termočlánku]

@@ -7,7 +7,7 @@ set xtics 1 nomirror
 set ytics 1 nomirror
 unset key
 set border 3
-set style rectangle back fc rgb "gray" fs solid 0.5 border -1
+set style rectangle back fc rgb "black" fs solid 0.2 border -1
 
 load "ctverce2.src.dat"
-plot "ctverce.src.dat" ls 2 lc rgb "black", f(x) dt 2 lc rgb "black" lw 2
+plot "ctverce.src.dat" pt 2 lc rgb "black" lw 2, f(x) dt 2 lc rgb "black" lw 4

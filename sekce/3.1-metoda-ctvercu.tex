@@ -6,28 +6,32 @@
 
 \subsection{Proložení dat funkcí}
 Ve fyzikálních experimentech obvykle měříme veličiny, které jsou závislé na
-veličině jiné. Ta se během měření mění, což nám umožňuje pomocí měření obou
-veličin vysledovat vztah mezi závislou a nezávislou veličinou. Nezávislou
-veličinou velice často bývá čas, ale také jí může být např. teplota, síla,
-poloha a další.\cite{praktikum}
+veličině jiné, která se během experimentu mění. Vztah mezi závislou a
+nezávislou veličinou jsme schopni vysledovat pomocí jejich měření a následného
+hledání závislosti.  Nezávislou veličinou velice často bývá čas, ale také jí
+může být např.~teplota, síla, poloha a další.\cite{praktikum}
+ 
+Při hledání oné souvislosti mnohdy potřebujeme proložit naměřená data funkcí.
+Proložen dat nám totiž umožňuje ověřit hypotetický předpoklad, zjistit přesnost
+měření či může dopomoci k nalezení různých koeficientů a parametrů experimentu.
 
 \subsubsection{Aproximace a interpolace}
 Při prokládání bodů funkcí se můžeme přiklonit k jedné ze dvou metod: k
 aproximaci, nebo interpolaci.
 
-\paragraph{Interpolace} je proces, kdy se snažíme nalézt funkci, která propojí
-všechny nám známé body. Nejjednodušší metodou, jak toho dosáhnout, je využít
+\paragraph{Interpolace} je proces, kdy se snažíme nalézt takovou funkci, jež propojí
+všechny nám známé body. Nejjednodušší metodou, jak toho dosáhnout, je využití
 lineární interpolace, kdy každé dvě po sobě následující hodnoty propojíme
 přímkou. Můžeme se s ní setkat například při vytváření grafů v tabulkových
-editorech (např. MS Excel či LibreOffice Calc), kdy propojení bodů přímkou je
-obvykle výchozí možnost vykreslování grafů. Nevýhoda této metody je ovšem
-ostrost funkce, kdy sice je spojitá, ale není diferencovatelná na celém svém
-definičním oboru. Kvůli své ostrosti zároveň tato metoda mnohdy nepředstavuje
-reálný průběh původní funkce.
+editorech (např.~MS Excel či LibreOffice Calc), kdy propojení bodů přímkou je
+obvykle výchozí možnost vykreslování grafů. 
+Nevýhoda této metody je ovšem ostrost funkce. Funkce je sice spojitá, ale není
+diferencovatelná na celém svém definičním oboru. Kvůli své ostrosti zároveň
+tato metoda mnohdy nepředstavuje reálný průběh původní funkce.
 
 Tyto problémy řeší méně rozšířené metody, jakými jsou kupříkladu kvadratická
 interpolace či interpolace vyšším polynomem (příkladem může být známý a
-rozšířený Lagrangeův polynom) . Ty zmenšují interpolační odchylky a díky
+rozšířený Lagrangeův polynom). Ty zmenšují interpolační odchylky a díky
 definici polynomem jsou diferencovatelné na celé definičním oboru. Ovšem jsou
 také složitější na spočítání, jak už z pohledu matematiky, tak z pohledu
 výpočetního výkonu.
@@ -35,7 +39,7 @@ výpočetního výkonu.
 \paragraph{Aproximace} se od interpolace liší v jednom zásadním aspektu:
 nevyžaduje, aby výsledná funkce procházela všemi body. To nám umožňuje najít
 o~mnoho hladší funkce, které kopírují průběh dat, či získat neznámé parametry
-závislosti z dat, která mohou obsahovat chybu měření. 
+závislosti z dat s možnou chybu měření. 
 
 Z tohoto důvodu je aproximace vhodnější při prokládání experimentálně získaných
 dat funkcí a umožňujeme nám porovnat jednotlivé předpisy funkcí a jejich
@@ -45,28 +49,28 @@ korelaci s daty.
 \label{sec:čtverce}
 Při našich experimentech měříme velké množství dat a přirozeně chceme všechna
 z nich využít v aproximaci naší funkce, čehož právě metoda nejmenších čtverců
-dosahuje. Ta je založena na principu, kdy se snažíme minimalizovat součet
-čtverců odchylek mezi naměřenými daty a aproximovanou funkcí.
-
-\plotfig{graf/ctverce.tex}[Ukázka metody nejmenších čtverců]
+dosahuje. Ta je založena na principu minimalizace součtu druhých mocnin%
+\footnote{Pojmy \emph{druhá mocnina} a \emph{čtverec} jsou zaměnitelné, protože
+plocha čtverce je druhou mocninou jeho strany.} odchylek mezi naměřenými daty a
+aproximovanou funkcí.
 
 Označme si naší teoretickou funkci jako $f(x)$, ve které figurují kupříkladu
 tři neznámé označené jako $a$, $b$ a $c$. Do funkce~$f$ tak vstupuje
-proměnná~$x$ a neznámé~$a,b,c$. Aproximace funkce pomocí metody nejmenších
-čtverců je tedy potom o najít ideální hodnoty $a,b,c$ takové, aby právě součet
-čtverců odchylek.
+proměnná~$x$ a neznámé parametry~$a,b,c$. Aproximace funkce pomocí metody
+nejmenších čtverců je tedy potom o nalezení takové ideální hodnoty $a,b,c$, aby
+součet čtverců odchylek byl co nejmenší.
 
-Důležitou otázkou na zodpovězení je, proč vlastně se snažíme najít minimum sumy
+Důležitou otázkou na zodpovězení je, proč se vlastně snažíme najít minimum sumy
 čtverců odchylek. Pokud máme obecný předpis funkce~$f(x)$, tak víme, že po
 dosazení každé jedné naměřené hodnoty~$x_i$ bychom měli dostat výslednou
-hodnotu měření. Rozdíl mezi touto teoretickou hodnotu~$f(x_i)$ a ve skutečnosti
-naměřenou hodnotou~$y_i$ si označme jako~$\Delta_i = f(x_i)-y_i$. Při
-aproximaci bychom tak mohli chtít jednoduše minimalizovat tyto jednotlivé
+hodnotu měření~$y_i$. Rozdíl mezi touto teoretickou hodnotu~$f(x_i)$ a ve
+skutečnosti naměřenou hodnotou~$y_i$ si označme jako~$\Delta_i = f(x_i)-y_i$.
+Při aproximaci bychom tak mohli chtít jednoduše minimalizovat tyto jednotlivé
 rozdíly~$\Delta_i$, neboli minimalizovat funkci~$\nsum \Delta_i$. Avšak tu není
 možné minimalizovat, protože minimum jakéhokoliv součtu je vždy $-\infty$.
 Abychom se tedy vyhnuli tomuto problému, sčítáme hodnoty rozdílů umocněné na
-druhou mocninu~$\nsum \Delta_i^2$, přičemž minimum této funkce se nachází
-v~bodě~$0$.
+druhou~$\nsum \Delta_i^2$, přičemž minimum této funkce se nachází
+v~bodě~$y=0$.~\cite{praktikum}
 
 \plotfig{graf/deltas.tex}[Ukázka rozdílů hodnot pro $n=3$]
 
@@ -77,23 +81,25 @@ parametrů funkce~$f(x)$ pro minimalizace funkce~$S$, pro kterou platí
 }
 Tento problém se řeší dvěma hlavními metodami: iterativně a analyticky.
 
-\paragraph{Iterativní řešení} je obecné, fungující pro každý předpis pracující
+\plotfig{graf/ctverce.tex}[Ukázka metody nejmenších čtverců]
+
+\paragraph{Iterativní řešení} je obecné a fungující pro každý předpis. Pracuje
 na principu postupného iterování proměnných, kdy s každou iterací se funkce
-přibližuje správnému výsledku, dokud funkce nekonverguje. Jsou využívány pro
-řešení nelineárních problému, které nejsem schopni analyticky řešení. Tato
+přibližuje správnému výsledku, dokud funkce nekonverguje. Je používána pro
+řešení nelineárních problému, které nejsme schopni analyticky řešení. Tato
 metoda je umožněna využitím optimalizovaných počítačových algoritmů, například
 pomocí Levenberg-Marquardtova algoritmu.
 
 \paragraph{Analytické řešení} funguje na principu nalezení minima pomocí
-parciálních derivací podle všech neznámých parametrů. Z těchto derivací
-následně vzniká soustava rovnic, kterou jsme schopni vyřešit.  Je využívaná pro
+parciálního derivování podle všech neznámých parametrů. Z těchto derivací
+následně vzniká soustava rovnic, kterou jsme schopni vyřešit. Je využívaná pro
 řešení lineárních problémů, kdy můžeme naší rovnici zapsat pomocí polynomu
 $n$-tého řádu.
 
 
 \subsubsection{Lineární regrese}
-Speciální případ analytického řešení je lineární regrese. Jedná se o případ, kdy
-experimentálně získaná data prokládáme lineární funkcí s obecným předpisem
+Speciální případ analytického řešení je lineární regrese. Jedná se o případ,
+kdy experimentálně získaná data prokládáme lineární funkcí s obecným předpisem
 \eq{
     f(x) = ax + b\,.
 }
@@ -105,7 +111,7 @@ sumy konkrétně pro lineární funkci:
 }
 
 Abychom proložili data funkcí, musíme nalézt minimum funkce~$S$. Toho dosáhneme
-pomocí položení derivace této funkce rovnou nule, respektive položením
+pomocí položení derivace této funkce do rovnosti s nulou, respektive položením
 jednotlivých parciálních derivací rovných nule, protože se zde nachází dvě
 neznámé. 
 
@@ -157,8 +163,8 @@ neznámé.
 Po jednotlivém derivování funkce~$S$ podle~$a$ a $b$ a upravení výrazů
 dostáváme dvě rovnice~\eqref{eq:a_def} a~\eqref{eq:b_def}. Ty nám popisují onu
 lineární funkci jíž aproximujeme a $a$ a $b$ zde figurují jako proměnné. Ty
-ovšem v tento moment neznáme, tedy efektivně to jsou v tomto případě neznámé.
-To znamená, že se jedná o soustavu dvou rovnic o dvou neznámých, což můžeme
+ovšem v tento moment neznáme, tedy pro nás to jsou v tomto případě neznámé.
+To znamená, že se jedná o soustavu dvou rovnic o dvou neznámých, kterou můžeme
 jednoduše pomocí dosazovací metody vyřešit pro~$a$.
 \eq[m]{
     a\nsumx+nb = \nsumy\quad&\Rightarrow\quad 
@@ -173,7 +179,7 @@ jednoduše pomocí dosazovací metody vyřešit pro~$a$.
 %    an\nsumxx-a\(\nsumx\)^2=n\nsumxy-\nsumx\nsumy\\
 %\end{gather*}
 
-A protože máme rovnici~\eqref{eq:a} pro $a$, můžeme jí dosadit do dříve
+A protože nyní máme rovnici~\eqref{eq:a} pro $a$, můžeme jí dosadit do dříve
 odvozené rovnice~\eqref{eq:b_from_def} pro $b$, čímž dostáváme řešení této
 soustavy pro obě neznáme v podobě rovností~\eqref{eq:a} a~\eqref{eq:b}.
 \eq[m]{
