@@ -19,7 +19,8 @@
 % citations 
 \RequirePackage[
   backend=biber,        % if we want unicode and many other features (biber is already by default)
-  style=iso-numeric     % or iso-numeric for numeric citation method
+  style=iso-numeric,    % iso-numeric for numeric citation method
+%  sorting=nty           % for alphabetic sorting by author
 ]{biblatex}
 
 \RequirePackage[
@@ -64,13 +65,22 @@
   online       = {online},
   film         = {film}
 }
+
 % -- change headings to sans font --
+% own headings
 \titleformat*{\section}{\Large\bfseries\sffamily}
 \titleformat*{\subsection}{\large\bfseries\sffamily}
 \titleformat*{\subsubsection}{\bfseries\sffamily}
 \titleformat*{\paragraph}{\bfseries\sffamily}
 \titleformat*{\subparagraph}{\bfseries\sffamily}
 \renewcommand{\bottomtitlespace}{0.1\textheight}
+
+% headings by school guidelines
+%\titleformat*{\section}{\normalfont\fontsize{14}{16}\bfseries\sffamily}
+%\titleformat*{\subsection}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
+%\titleformat*{\subsubsection}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
+%\titleformat*{\paragraph}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
+%\titleformat*{\subparagraph}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
 
 % -- Commands --
 \newcommand\@leader{N/A}
@@ -102,13 +112,16 @@ příspěvková organizace
 
 \vspace{3cm}
 
-{\bfseries\sffamily\@title}
+{\LARGE\bfseries\sffamily\@title}
+
+\vspace{0.5cm}
+
+Seminární práce
 
 \vspace{2cm}
 
 Mikulov 2020
 \vfill
-\normalsize
 Autor: \@author \hfill Vedoucí: \@leader
 \vspace{1cm}}
 \end{titlepage}
