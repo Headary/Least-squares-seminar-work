@@ -101,7 +101,7 @@
 %\thispagestyle{empty}
 {\Large
 \centering
-\vspace{1cm}
+\vspace{1.5cm}
 
 Gymnázium a střední odborná škola Mikulov\\
 příspěvková organizace
@@ -118,7 +118,7 @@ příspěvková organizace
 
 Seminární práce
 
-\vspace{2cm}
+\vspace{2.5cm}
 
 Mikulov 2020
 \vfill
