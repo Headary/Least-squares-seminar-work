@@ -4,6 +4,7 @@ graf/*
 !graf/*.src.*
 figures/*
 !figures/*.src.*
+simulation
 
 GSS_SP_Manual.pdf
 Seznam\ prací.xlsx
