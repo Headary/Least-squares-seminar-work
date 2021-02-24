@@ -47,12 +47,15 @@ korelaci s daty.
 
 \subsubsection{Metoda nejmenších čtverců}
 \label{sec:čtverce}
-Při našich experimentech měříme velké množství dat a přirozeně chceme všechna
-z nich využít v aproximaci naší funkce, čehož právě metoda nejmenších čtverců
+Při našich experimentech měříme velké množství dat a přirozeně chceme všechna z
+nich využít v aproximaci naší funkce, čehož právě metoda nejmenších čtverců
 dosahuje. Ta je založena na principu minimalizace součtu druhých mocnin%
 \footnote{Pojmy \emph{druhá mocnina} a \emph{čtverec} jsou zaměnitelné, protože
-plocha čtverce je druhou mocninou jeho strany.} odchylek mezi naměřenými daty a
-aproximovanou funkcí.
+plocha čtverce je druhou mocninou jeho strany.} odchylek mezi naměřenými daty
+a~aproximovanou funkcí. Příkladem této metody může být
+graf~\ref{graph:leastsquares}.
+
+\plotfig{graf/ctverce.tex}[Ukázka metody nejmenších čtverců][graph:leastsquares]
 
 Označme si naší teoretickou funkci jako $f(x)$, ve které figurují kupříkladu
 tři neznámé označené jako $a$, $b$ a $c$. Do funkce~$f$ tak vstupuje
@@ -72,7 +75,7 @@ Abychom se tedy vyhnuli tomuto problému, sčítáme hodnoty rozdílů umocněn�
 druhou~$\nsum \Delta_i^2$, přičemž minimum této funkce se nachází
 v~bodě~$y=0$.~\cite{praktikum}
 
-\plotfig{graf/deltas.tex}[Ukázka rozdílů hodnot pro $n=3$]
+\plotfig{graf/deltas.tex}[Příklad rozdílů naměřených a teoretických pro~$n=3$]
 
 Obecně tedy můžeme metodu nejmenších čtverců vyjádřit jako hledaní ideálních 
 parametrů funkce~$f(x)$ pro minimalizace funkce~$S$, pro kterou platí
@@ -80,8 +83,6 @@ parametrů funkce~$f(x)$ pro minimalizace funkce~$S$, pro kterou platí
     S = \nsum(y_i - f(x_i))^2\,.\lbl{eq:general_squares}\\
 }
 Tento problém se řeší dvěma hlavními metodami: iterativně a analyticky.
-
-\plotfig{graf/ctverce.tex}[Ukázka metody nejmenších čtverců]
 
 \paragraph{Iterativní řešení} je obecné a fungující pro každý předpis. Pracuje
 na principu postupného iterování proměnných, kdy s každou iterací se funkce

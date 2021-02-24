@@ -24,9 +24,8 @@
 ]{biblatex}
 
 \RequirePackage[
-	pdftex,
     margin=2.5cm,
-	headheight=12pt]{geometry}
+	headheight=14pt]{geometry}
 \RequirePackage{lastpage} % get number of pages
 \RequirePackage[nobottomtitles]{titlesec} % change headins style
 \RequirePackage{graphicx}
@@ -87,44 +86,44 @@
 \newcommand\leader[1]{\renewcommand\@leader{#1}}
 
 \renewcommand{\maketitle}{
-
-\firstpage
-\pagebreak
-\emptypage
-\prohlaseni
-\tableofcontents
-\newpage
+    \firstpage
+    \pagebreak
+    \emptypage
+    \printprohlaseni
+    \printpodekovani
+    \tableofcontents
+    \newpage
 }
 
 \newcommand{\firstpage}{
-\begin{titlepage}
-%\thispagestyle{empty}
-{\Large
-\centering
-\vspace{1.5cm}
+    \begin{titlepage}
+        %\thispagestyle{empty}
+        {\large
+        \centering
+        \vspace{1.5cm}
 
-Gymnázium a střední odborná škola Mikulov\\
-příspěvková organizace
+        Gymnázium a střední odborná škola Mikulov\\
+        příspěvková organizace
 
-\vspace{1.5cm}
+        \vspace{1.5cm}
 
-\includegraphics[width=0.3\textwidth]{figures/gss.pdf}
+        \includegraphics[width=0.3\textwidth]{figures/gss.pdf}
 
-\vspace{3cm}
+        \vspace{3cm}
 
-{\LARGE\bfseries\sffamily\@title}
+        {\Large\bfseries\sffamily\@title}
 
-\vspace{0.5cm}
+        \vspace{0.5cm}
 
-Seminární práce
+        Seminární práce
 
-\vspace{2.5cm}
+        \vspace{2.5cm}
 
-Mikulov 2020
-\vfill
-Autor: \@author \hfill Vedoucí: \@leader
-\vspace{1cm}}
-\end{titlepage}
+        Mikulov 2020
+        \vfill
+        Autor: \@author \hfill Vedoucí: \@leader
+        \vspace{1cm}}
+    \end{titlepage}
 }
 
 \newcommand\emptypage{
@@ -135,21 +134,35 @@ Autor: \@author \hfill Vedoucí: \@leader
 }
 
 \RequirePackage{dashrule} % dotted line
-\newcommand{\prohlaseni}{
-\newpage
-\hspace{0cm}
-\thispagestyle{empty}
-\vfill
+\newcommand{\printprohlaseni}{
+    \newpage
+    \thispagestyle{empty}
+    \hspace{0cm}
+    \vfill
 
-\noindent Prohlášení:
+    \section*{Prohlášení}
+    Prohlašuji, že jsem závěrečnou práci zpracoval samostatně. Souhlasím, aby moje 
+    práce byla archivována Gymnáziem a střední odbornou školou Mikulov, příspěvková 
+    organizace, případně použita pro další studijní účely.
+    \vspace{1cm}
+    \begin{center}
+        \hdashrule{6cm}{1pt}{2pt}\\
+        (podpis)
+    \end{center}
+    \newpage
+}
 
-Prohlašuji, že jsem závěrečnou práci zpracoval samostatně. Souhlasím, aby moje 
-práce byla archivována Gymnáziem a střední odbornou školou Mikulov, příspěvková 
-organizace, případně použita pro další studijní účely.
-\vspace{1cm}
-\begin{center}
-\hdashrule{6cm}{1pt}{2pt}\\
-(podpis)
-\end{center}
-\newpage
+\newcommand\@podekovani{N/A}
+\newcommand\podekovani[1]{
+    \renewcommand\@podekovani{#1}
+}
+
+\newcommand{\printpodekovani}{
+    \newpage
+    \thispagestyle{empty}
+    \hspace{0cm}
+    \vfill
+    \section*{Poděkování}
+    \@podekovani
+    \newpage
 }

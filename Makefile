@@ -1,5 +1,5 @@
 
-.PHONY: all clean
+.PHONY: all clean quick
 all: build/seminarka.pdf
 
 clean:
@@ -8,6 +8,9 @@ clean:
 	find graf/ -type f -name "*.tex" -exec rm {} \;
 	find figures/ -type f -name "*.eps" -exec rm {} \;
 	find figures/ -type f -name "*-eps-converted-to.pdf" -exec rm {} \;
+
+quick:
+	xelatex -output-directory build seminarka.tex
 
 DEP=seminarka.tex seminarka.cls sources.bib \
 	$(wildcard sekce/*.tex) \
