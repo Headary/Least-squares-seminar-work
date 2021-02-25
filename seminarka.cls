@@ -83,7 +83,9 @@
 %\titleformat*{\paragraph}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
 %\titleformat*{\subparagraph}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
 
-% -- Commands --
+% -----
+% Commands 
+% -----
 \newcommand\@leader{N/A}
 \newcommand\leader[1]{\renewcommand\@leader{#1}}
 
@@ -135,25 +137,24 @@
     \clearpage
 }
 
+% --- Create page "Prohlášení" ---
+\newcommand\@prohlaseni{N/A}
+\newcommand\prohlaseni[1]{
+    \renewcommand\@prohlaseni{#1}
+}
+
 \RequirePackage{dashrule} % dotted line
 \newcommand{\printprohlaseni}{
     \newpage
     \thispagestyle{empty}
     \hspace{0cm}
     \vfill
-
     \section*{Prohlášení}
-    Prohlašuji, že jsem závěrečnou práci zpracoval samostatně. Souhlasím, aby moje 
-    práce byla archivována Gymnáziem a~střední odbornou školou Mikulov, příspěvková 
-    organizace, případně použita pro další studijní účely.
-    \vspace{1cm}
-    \begin{center}
-        \hdashrule{6cm}{1pt}{2pt}\\
-        (podpis)
-    \end{center}
+    \@prohlaseni
     \newpage
 }
 
+% --- Create page "Poděkování" ---
 \newcommand\@podekovani{N/A}
 \newcommand\podekovani[1]{
     \renewcommand\@podekovani{#1}
