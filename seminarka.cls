@@ -20,7 +20,8 @@
 \RequirePackage[
   backend=biber,        % if we want unicode and many other features (biber is already by default)
   style=iso-numeric,    % iso-numeric for numeric citation method
-  sorting=nty           % for alphabetic sorting by author
+  sorting=nty,          % for alphabetic sorting by author
+  sortcites=true
 ]{biblatex}
 
 \RequirePackage[
@@ -103,7 +104,7 @@
         \centering
         \vspace{1.5cm}
 
-        Gymnázium a střední odborná škola Mikulov\\
+        Gymnázium a~střední odborná škola Mikulov\\
         příspěvková organizace
 
         \vspace{1.5cm}
@@ -143,7 +144,7 @@
 
     \section*{Prohlášení}
     Prohlašuji, že jsem závěrečnou práci zpracoval samostatně. Souhlasím, aby moje 
-    práce byla archivována Gymnáziem a střední odbornou školou Mikulov, příspěvková 
+    práce byla archivována Gymnáziem a~střední odbornou školou Mikulov, příspěvková 
     organizace, případně použita pro další studijní účely.
     \vspace{1cm}
     \begin{center}
