@@ -30,7 +30,6 @@
 \RequirePackage{lastpage} % get number of pages
 \RequirePackage[nobottomtitles]{titlesec} % change headins style
 \RequirePackage{graphicx}
-\RequirePackage{krskasugar}
 \RequirePackage{booktabs}
 \RequirePackage[
 	pdfusetitle,
@@ -40,7 +39,6 @@
     hyperfootnotes=false,
     psdextra
 ]{hyperref} % create links in file
-\RequirePackage{fkssugar}
 
 \RequirePackage{fancyhdr} % enable changing header and footer
 \fancyhf{}
@@ -68,7 +66,6 @@
 }
 
 % -- change headings to sans font --
-% own headings
 \titleformat*{\section}{\Large\bfseries\sffamily}
 \titleformat*{\subsection}{\large\bfseries\sffamily}
 \titleformat*{\subsubsection}{\bfseries\sffamily}
@@ -76,18 +73,18 @@
 \titleformat*{\subparagraph}{\bfseries\sffamily}
 \renewcommand{\bottomtitlespace}{0.1\textheight}
 
-% headings by school guidelines
-%\titleformat*{\section}{\normalfont\fontsize{14}{16}\bfseries\sffamily}
-%\titleformat*{\subsection}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
-%\titleformat*{\subsubsection}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
-%\titleformat*{\paragraph}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
-%\titleformat*{\subparagraph}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
 
 % -----
 % Commands 
 % -----
 \newcommand\@leader{N/A}
-\newcommand\leader[1]{\renewcommand\@leader{#1}}
+    \newcommand\leader[1]{\renewcommand\@leader{#1}}
+\newcommand\@prohlaseni{N/A}
+    \newcommand\prohlaseni[1]{\renewcommand\@prohlaseni{#1}}
+\newcommand\@podekovani{N/A}
+    \newcommand\podekovani[1]{\renewcommand\@podekovani{#1}}
+
+\newcommand\mcite[1]{\mbox{\cite{#1}}}
 
 \renewcommand{\maketitle}{
     \firstpage
@@ -99,6 +96,7 @@
     \newpage
 }
 
+% --- define first page ---
 \newcommand{\firstpage}{
     \begin{titlepage}
         %\thispagestyle{empty}
@@ -138,11 +136,6 @@
 }
 
 % --- Create page "Prohlášení" ---
-\newcommand\@prohlaseni{N/A}
-\newcommand\prohlaseni[1]{
-    \renewcommand\@prohlaseni{#1}
-}
-
 \RequirePackage{dashrule} % dotted line
 \newcommand{\printprohlaseni}{
     \newpage
@@ -155,11 +148,6 @@
 }
 
 % --- Create page "Poděkování" ---
-\newcommand\@podekovani{N/A}
-\newcommand\podekovani[1]{
-    \renewcommand\@podekovani{#1}
-}
-
 \newcommand{\printpodekovani}{
     \newpage
     \thispagestyle{empty}

@@ -1,6 +1,6 @@
 
 .PHONY: all clean quick
-all: build/seminarka.pdf
+all: build/seminarka.pdf build/seminarka_school_version.pdf
 
 clean:
 	find build/ -type f -not -name "*.pdf" -exec rm {} \;
@@ -19,6 +19,9 @@ DEP=seminarka.tex seminarka.cls sources.bib \
 
 build/seminarka.pdf: $(DEP)
 	latexmk -xelatex -jobname=build/seminarka seminarka.tex
+
+build/seminarka_school_version.pdf: seminarka_school_version.tex $(DEP)
+	latexmk -xelatex -jobname=build/seminarka_school_version seminarka_school_version.tex
 
 figures/%.eps: figures/%.src.svg
 	inkscape $< -o $@

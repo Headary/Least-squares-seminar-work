@@ -3,12 +3,33 @@
 \usepackage[nottoc]{tocbibind}
 \usepackage{array}
 
-%\setmainfont{Arial}
-%\renewcommand{\familydefault}{\sfdefault}
+% -----
+% School required format 
+% -----
+\makeatletter
+\@ifundefined{UseOption}{\def\UseOption{normal}}{} % when no option set, we use web settings
+\makeatother
+\usepackage{optional}
+
+\opt{forschool}{
+    \usepackage{microtype}
+    \usepackage{unicode-math}
+
+    \titleformat*{\section}{\normalfont\fontsize{14}{16}\bfseries}
+    \titleformat*{\subsection}{\normalfont\fontsize{12}{14}\itshape\bfseries}
+    \titleformat*{\subsubsection}{\normalfont\fontsize{12}{14}\itshape\bfseries}
+    \titleformat*{\paragraph}{\normalfont\fontsize{12}{14}\itshape\bfseries}
+    \titleformat*{\subparagraph}{\normalfont\fontsize{12}{14}\itshape\bfseries}
+
+    \setmainfont{Arial}
+    \setmathfont{Cambria Math}
+}
+\usepackage{fkssugar}
+\usepackage{krskasugar}
 
 \author{Adam Krška}
 \title{Stanovení parametru termočlánku pomocí metody nejmenších čtverců}
-\leader{Mgr. Roman Pavlačka, Ph.D.}
+\leader{Mgr.~Roman Pavlačka,~Ph.D.}
 
 \prohlaseni{\subfile{sekce/prohlaseni.tex}}
 \podekovani{<Poděkování>} %TODO
