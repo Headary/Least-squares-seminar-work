@@ -86,12 +86,18 @@ parametrů funkce~$f(x)$ pro minimalizace funkce~$S$, pro kterou platí
 }
 Tento problém se řeší dvěma hlavními metodami: iterativně a analyticky.
 
-\paragraph{Iterativní řešení} je obecné a fungující pro každý předpis. Pracuje
-na principu postupného iterování proměnných, kdy s každou iterací se funkce
-přibližuje správnému výsledku, dokud funkce nekonverguje. Je používána pro
-řešení nelineárních problému, které nejsme schopni analyticky řešení. Tato
-metoda je umožněna využitím optimalizovaných počítačových algoritmů, například
-pomocí Levenberg-Marquardtova algoritmu.
+\paragraph{Iterativní řešení} je obecné a~fungující pro každý předpis. Problém
+nejmenších čtverců řeší pomocí opakování postupu ve smyčce (tzv.~iterování),
+kdy se s~každým opakováním vypočítané hodnoty jemně změní. Ověří se, zdali se
+funkce~\eqref{eq:general_squares} přiblížila svému minimu a~pokračuje se v~další
+změně hodnot. V~moment dosáhnutí minima s~určitou přesností se opakování
+zastavuje a~my říkáme, že funkce \emph{konvergovala}.
+%Pracuje na principu měnění proměnných, kdy s každou iterací se funkce
+%přibližuje správnému výsledku, dokud funkce nekonverguje. 
+
+Tato metoda je používána pro řešení nelineárních problémů, které nejsme schopni
+analyticky řešení. Vzhledem k~počtu potřebných výpočtů je aplikována ve formě
+počítačových algoritmů, například pomocí algoritmu Levenberg-Marquardtova.
 
 \paragraph{Analytické řešení} funguje na principu nalezení minima pomocí
 parciálního derivování podle všech neznámých parametrů. Z těchto derivací
@@ -113,9 +119,8 @@ sumy konkrétně pro lineární funkci:
     S = \nsum(y_i-ax_i-b)^2\,.
 }
 Abychom proložili data funkcí, musíme nalézt minimum funkce~$S$. Toho dosáhneme
-pomocí položení derivace této funkce do rovnosti s nulou, respektive položením
-jednotlivých parciálních derivací rovných nule, protože se zde nachází dvě
-neznámé.~\cite{wolfram} 
+pomocí položení jednotlivých parciálních derivací této funkce do rovnosti 
+s~nulou.~\cite{wolfram} 
 
 %\begin{minipage}{0.45\textwidth}
 %\eq{
