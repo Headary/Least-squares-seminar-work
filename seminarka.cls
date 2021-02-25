@@ -20,7 +20,7 @@
 \RequirePackage[
   backend=biber,        % if we want unicode and many other features (biber is already by default)
   style=iso-numeric,    % iso-numeric for numeric citation method
-%  sorting=nty           % for alphabetic sorting by author
+  sorting=nty           % for alphabetic sorting by author
 ]{biblatex}
 
 \RequirePackage[
@@ -53,6 +53,7 @@
 
 \DefineBibliographyStrings{czech}{%
   at           = {v},
+  in           = {v},
   bysupervisor = {vedouc\'{i} pr\'{a}ce},
   urlfrom      = {dostupn\'{e} z},
   %urlalso      = {dostupn\'{e} tak\'{e} z},

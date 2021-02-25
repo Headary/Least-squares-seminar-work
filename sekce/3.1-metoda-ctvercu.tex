@@ -9,7 +9,7 @@ Ve fyzikálních experimentech obvykle měříme veličiny, které jsou závisl�
 veličině jiné, která se během experimentu mění. Vztah mezi závislou a
 nezávislou veličinou jsme schopni vysledovat pomocí jejich měření a následného
 hledání závislosti.  Nezávislou veličinou velice často bývá čas, ale také jí
-může být např.~teplota, síla, poloha a další.\cite{praktikum}
+může být např.~teplota, síla, poloha a další.~\cite{praktikum}
  
 Při hledání oné souvislosti mnohdy potřebujeme proložit naměřená data funkcí.
 Proložen dat nám totiž umožňuje ověřit hypotetický předpoklad, zjistit přesnost
@@ -19,15 +19,17 @@ měření či může dopomoci k nalezení různých koeficientů a parametrů ex
 Při prokládání bodů funkcí se můžeme přiklonit k jedné ze dvou metod: k
 aproximaci, nebo interpolaci.
 
-\paragraph{Interpolace} je proces, kdy se snažíme nalézt takovou funkci, jež propojí
-všechny nám známé body. Nejjednodušší metodou, jak toho dosáhnout, je využití
-lineární interpolace, kdy každé dvě po sobě následující hodnoty propojíme
-přímkou. Můžeme se s ní setkat například při vytváření grafů v tabulkových
-editorech (např.~MS Excel či LibreOffice Calc), kdy propojení bodů přímkou je
-obvykle výchozí možnost vykreslování grafů. 
+\paragraph{Interpolace} je proces, kdy se snažíme nalézt takovou funkci, jež
+propojí všechny nám známé body. Nejjednodušší metodou, jak toho dosáhnout, je
+využití lineární interpolace, kdy každé dvě po sobě následující hodnoty
+propojíme přímkou. Můžeme se s ní setkat například při vytváření grafů
+v~tabulkových editorech (např.~MS Excel či LibreOffice Calc), kdy propojení
+bodů přímkou je obvykle výchozí možnost vykreslování grafů. 
+
 Nevýhoda této metody je ovšem ostrost funkce. Funkce je sice spojitá, ale není
-diferencovatelná na celém svém definičním oboru. Kvůli své ostrosti zároveň
-tato metoda mnohdy nepředstavuje reálný průběh původní funkce.
+diferencovatelná na celém svém definičním oboru, což omezuje možnosti jejího
+následného využití. Kvůli své ostrosti zároveň tato metoda mnohdy nepředstavuje
+reálný průběh původní funkce.~\cite{segeth}
 
 Tyto problémy řeší méně rozšířené metody, jakými jsou kupříkladu kvadratická
 interpolace či interpolace vyšším polynomem (příkladem může být známý a
@@ -110,11 +112,10 @@ sumy konkrétně pro lineární funkci:
 \eq[m]{
     S = \nsum(y_i-ax_i-b)^2\,.
 }
-
 Abychom proložili data funkcí, musíme nalézt minimum funkce~$S$. Toho dosáhneme
 pomocí položení derivace této funkce do rovnosti s nulou, respektive položením
 jednotlivých parciálních derivací rovných nule, protože se zde nachází dvě
-neznámé. 
+neznámé.~\cite{wolfram} 
 
 %\begin{minipage}{0.45\textwidth}
 %\eq{
@@ -144,6 +145,7 @@ neznámé.
 %    a\nsumx + nb &= \nsumy
 %}
 %\end{minipage}
+
 \noindent
 \begin{minipage}{0.49\linewidth}
     \begin{gather*}
