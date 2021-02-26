@@ -4,9 +4,9 @@ graf/*
 !graf/*.src.*
 figures/*
 !figures/*.src.*
+!figures/.jpg
 simulation
 
 GSS_SP_Manual.pdf
 Seznam\ prací.xlsx
 fks-vlnka.sh
-figures/zadani.pdf
