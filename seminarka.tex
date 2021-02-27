@@ -13,19 +13,20 @@
 \makeatother
 \usepackage{optional}
 
+
+\titleformat*{\section}{\normalfont\fontsize{14}{16}\bfseries\sffamily}
+\titleformat*{\subsection}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
+\titleformat*{\subsubsection}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
+\titleformat*{\paragraph}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
+\titleformat*{\subparagraph}{\normalfont\fontsize{12}{14}\itshape\bfseries\sffamily}
+
 \opt{forschool}{
     \usepackage{microtype}
     \usepackage{unicode-math}
-
-    \titleformat*{\section}{\normalfont\fontsize{14}{16}\bfseries}
-    \titleformat*{\subsection}{\normalfont\fontsize{12}{14}\itshape\bfseries}
-    \titleformat*{\subsubsection}{\normalfont\fontsize{12}{14}\itshape\bfseries}
-    \titleformat*{\paragraph}{\normalfont\fontsize{12}{14}\itshape\bfseries}
-    \titleformat*{\subparagraph}{\normalfont\fontsize{12}{14}\itshape\bfseries}
-
     \setmainfont{Arial}
-    \setmathfont{Cambria Math}
+    \setmathfont{XITS Math}
 }
+
 \usepackage{fkssugar}
 \usepackage{krskasugar}
 
@@ -41,18 +42,24 @@
 
 %\geometry{showframe}
 
+\newcommand{\nsum}{\sum^n_{i=1}}
+\newcommand{\nsumx}{\sum^n_{i=1}x_i}
+\newcommand{\nsumy}{\sum^n_{i=1}y_i}
+\newcommand{\nsumxx}{\sum^n_{i=1}x_i^2}
+\newcommand{\nsumxy}{\sum^n_{i=1}x_iy_i}
+
 \begin{document}
 \maketitle
 
-%\newpage
+\newpage
 \subfile{sekce/1-uvod.tex}
-%\newpage
+\newpage
 \subfile{sekce/2-cil_prace.tex}
-%\newpage
+\newpage
 \subfile{sekce/3-soucasny-stav-resene-problematiky.tex}
-%\newpage
+\newpage
 \subfile{sekce/4-vysledky.tex}
-%\newpage
+\newpage
 \subfile{sekce/5-zaver.tex}
 \newpage
 \subfile{sekce/souhrn.tex}

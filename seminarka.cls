@@ -73,7 +73,6 @@
 \titleformat*{\subparagraph}{\bfseries\sffamily}
 \renewcommand{\bottomtitlespace}{0.1\textheight}
 
-
 % -----
 % Commands 
 % -----
