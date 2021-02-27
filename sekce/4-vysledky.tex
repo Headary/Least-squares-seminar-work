@@ -33,33 +33,33 @@ s~přesností~$"0.1 \C"$ a~analogového voltmetru o~přesnosti~$"0.2 mV"$
     \label{tab:data}
 \end{table}
 
-Z těchto dat můžeme vytvořit graf~\ref{graph:data} znázorňující data včetně 
+Z~těchto dat můžeme vytvořit graf~\ref{graph:data} znázorňující data včetně 
 proložených funkcí.
 
 % graf
 \plotfig{graf/data.tex}[Graf naměřených dat][graph:data]
 
 \subsection{Výpočet parametru}
-V grafu~\ref{graph:data} jsme znázornili i funkce, které aproximují naměřená
-data.  Ovšem otázkou zůstává, jak jsme k nim došli.
+V~grafu~\ref{graph:data} jsme znázornili i~funkce, které aproximují naměřená
+data.  Ovšem otázkou zůstává, jak jsme k~nim došli.
 
-V sekci~\ref{sec:efekty-termoelektrika} jsme si řekli, že za podmínky nízkého
+V~sekci~\ref{sec:efekty-termoelektrika} jsme si řekli, že za podmínky nízkého
 rozdílu teplot můžeme termoelektrické napětí popsat pomocí rovnice
 \eq{
     E = \alpha\Delta T\,.\lbl{eq:E}\,,
 }
-přičemž pro polovodič typu~T je závislost lineární zhruba do $"200 \C"$, což
+přičemž pro polovodič typu~T je závislost lineární zhruba  do~$"200 \C"$, což
 naše data pohodlně splňují.~\cite{thermocoupleinfo}
 
 Tato rovnice neobsahuje konstantní složku, neboli $b=0$. To znamená, že funkce
-prochází nulou a vyskytuje se v ní pouze jedna neznámá: $\alpha$. Tím pádem
+prochází nulou a~vyskytuje se v~ní pouze jedna neznámá: $\alpha$. Tím pádem
 nemusíme pro výpočet parametru používat rovnici~\eqref{eq:a}, ale můžeme jej
 vyjádřit pomocí zjednodušeného tvaru
 \eq{
     a = \frac{\nsumxy}{\nsumxx} \ztoho \alpha = \frac{\nsum \Delta T_i*E_i}
     {\nsum \(\Delta T_i\)^2}\,,
 }
-kterou získáváme při aplikaci postupu v sekci~\ref{sec:lin-regrese} na 
+kterou získáváme při aplikaci postupu v~sekci~\ref{sec:lin-regrese} na 
 funkci~\eqref{eq:E}. Při aplikaci na všechna naměřená data dostáváme hodnotu
 koeficientu
 \eq{
@@ -67,15 +67,15 @@ koeficientu
 }
 
 \subsection{Přesnost modelu}
-Každé měření, včetně toho našeho, není naprosto přesné a je v něm nějaká chyba,
-ať už to je chyba statistická či systematická. V našem případě budeme chtít 
-spočítat, jak moc naměřená data odpovídají vypočítanému modelu. K takovému
-popisu se často ve statistice používá hodnota označována jako $R^2$ s definicí
+Každé měření, včetně toho našeho, není naprosto přesné a~je v~něm nějaká chyba,
+ať už to je chyba statistická či systematická. V~našem případě budeme chtít 
+spočítat, jak moc naměřená data odpovídají vypočítanému modelu. K~takovému
+popisu se často ve statistice používá hodnota označována  jako~$R^2$ s~definicí
 \eq{
     R^2 = 1 - \frac{\nsum (y_i - \hat y)^2}{\nsum (y_i - \bar y)^2}\,.
 }
-Zde $\bar y$ značí průměr naměřených hodnot, $\hat y$ je předpovídaná hodnota
-dle modelu a $y_i$ představuje jednotlivé naměřené hodnoty. Přepsáno do našich
+Zde $\bar y$ značí průměr naměřených hodnot, $\hat y$~je  předpovídaná hodnota
+dle modelu a~$y_i$ představuje jednotlivé naměřené hodnoty. Přepsáno do našich
 hodnot nabývá rovnice tvaru
 \eq{
     R^2 = 1 - \frac{\nsum (E_i - \alpha\Delta T_i)^2}{\nsum (E_i - \bar E)^2}\,.
@@ -83,17 +83,18 @@ hodnot nabývá rovnice tvaru
 
 Po využití tohoto vztahu dostáváme hodnotu~$R^2 = "0.958~5" = "95.85 \%"$, ze
 které můžeme usuzovat, že naše měření bylo poměrně\footnotei{.}{To usuzujeme
-z~toho faktu, že nejvyšší hodnota $R^2$ je $"100 \%"$.}
+z~toho faktu, že nejvyšší  hodnota~$R^2$~je~$"100 \%"$.}
 
 \subsection{Diskuze}
-Jak můžeme vidět v tabulce~\ref{tab:data} vidět, měřili jsme ochlazování pouze
+Jak můžeme vidět v~tabulce~\ref{tab:data} vidět, měřili jsme ochlazování pouze
 dvakrát. To ponechává možnost existence systematické chyby, ovšem bohužel kvůli
-nedostupnosti pomůcek a pandemické situaci v době vypracování této seminární
-práce nebylo možné výsledků získat více. V ideální situaci by bylo využito
-digitálního milivoltmetru pro zachycení více výsledků a eliminace lidské chyby,
-experiment změřen vícekrát a byl by změřen i při zahřívání, nejen při
+nedostupnosti pomůcek a~pandemické situaci v~době vypracování této seminární
+práce nebylo možné výsledků získat více. V~ideální situaci by bylo využito
+digitálního milivoltmetru pro zachycení více výsledků a~eliminace lidské chyby,
+experiment změřen vícekrát a~byl by změřen i~při zahřívání, nejen při
 ochlazování.
 
-Ovšem i přes tyto fakty nemají naměřená data velkou chybu a koeficient korelace~$R^2$
-vyšel velice blízku~$"100 \%"$. Proto můžeme považovat experiment v rámci mezí
-za povedený s vhodným podrobnějším přeměřením v budoucnosti.
+Ovšem i~přes tyto fakty nemají naměřená data velkou chybu a~koeficient
+korelace~$R^2$ vyšel velice blízku~$"100 \%"$. Proto můžeme považovat
+experiment v~rámci mezí za povedený s~vhodným podrobnějším přeměřením
+v~budoucnosti.
