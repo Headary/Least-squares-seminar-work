@@ -6,7 +6,8 @@ hledání závislosti.  Nezávislou veličinou velice často bývá čas, ale ta
 může být např.~teplota, síla, poloha a~další.~\cite{praktikum}
  
 Při hledání oné souvislosti mnohdy potřebujeme proložit naměřená data funkcí.
-Proložen dat nám totiž umožňuje ověřit hypotetický předpoklad, zjistit přesnost
+% nemělo by být "závislosti" místo "souvislosti"?
+Proložení dat nám totiž umožňuje ověřit hypotetický předpoklad, zjistit přesnost
 měření či může dopomoci k~nalezení různých koeficientů a~parametrů experimentu.
 
 \subsubsection{Aproximace a~interpolace}
@@ -28,7 +29,7 @@ reálný průběh původní funkce.~\cite{segeth}
 Tyto problémy řeší méně rozšířené metody, jakými jsou kupříkladu kvadratická
 interpolace či interpolace vyšším polynomem (příkladem může být známý
 a~rozšířený Lagrangeův polynom). Ty zmenšují interpolační odchylky a~díky
-definici polynomem jsou diferencovatelné na celé definičním oboru. Ovšem jsou
+definici polynomem jsou diferencovatelné na celém definičním oboru. Jsou ovšem
 také složitější na spočítání, jak už z~pohledu matematiky, tak z~pohledu
 výpočetního výkonu.
 
@@ -53,20 +54,21 @@ graf~\ref{graph:leastsquares}.
 
 \plotfig{graf/ctverce.tex}[Ukázka metody nejmenších čtverců][graph:leastsquares]
 
-Označme si naší teoretickou funkci  jako~$f(x)$, ve které figurují kupříkladu
+Označme si naši teoretickou funkci  jako~$f(x)$, ve které figurují kupříkladu
 tři neznámé označené  jako~$a$, $b$ a~$c$. Do funkce~$f$ tak vstupuje
 proměnná~$x$ a~neznámé parametry~$a,b,c$. Aproximace funkce pomocí metody
-nejmenších čtverců je tedy potom o~nalezení takové ideální  hodnoty~$a,b,c$,
+nejmenších čtverců je tedy o~nalezení takové ideální hodnoty~$a,b,c$,
+% buď "tedy", nebo "potom" -- jedno je vždy navíc
 aby součet čtverců odchylek byl co nejmenší.
 
 Důležitou otázkou na zodpovězení je, proč se vlastně snažíme najít minimum sumy
 čtverců odchylek. Pokud máme obecný předpis funkce~$f(x)$, tak víme, že po
 dosazení každé jedné naměřené hodnoty~$x_i$ bychom měli dostat výslednou
-hodnotu měření~$y_i$. Rozdíl mezi touto teoretickou hodnotu~$f(x_i)$ a~ve
+hodnotu měření~$y_i$. Rozdíl mezi touto teoretickou hodnotou~$f(x_i)$ a~ve
 skutečnosti naměřenou hodnotou~$y_i$ si označme jako~$\Delta_i = f(x_i)-y_i$.
 Při aproximaci bychom tak mohli chtít jednoduše minimalizovat tyto jednotlivé
-rozdíly~$\Delta_i$, neboli minimalizovat funkci~$\nsum \Delta_i$. Avšak tu není
-možné minimalizovat, protože minimum jakéhokoliv součtu   je vždy~$-\infty$.
+rozdíly~$\Delta_i$, neboli minimalizovat funkci~$\nsum \Delta_i$. Tu však není
+možné minimalizovat, protože minimum jakéhokoliv součtu je vždy~$-\infty$.
 Abychom se tedy vyhnuli tomuto problému, sčítáme hodnoty rozdílů umocněné na
 druhou~$\nsum \Delta_i^2$, přičemž minimum této funkce se nachází
 v~bodě~$y=0$.~\cite{praktikum}
@@ -90,13 +92,13 @@ opakování zastavuje a~my říkáme, že funkce \emph{konvergovala}.
 %přibližuje správnému výsledku, dokud funkce nekonverguje. 
 
 Tato metoda je používána pro řešení nelineárních problémů, které nejsme schopni
-analyticky řešení. Vzhledem k~počtu potřebných výpočtů je aplikována ve formě
-počítačových algoritmů, například pomocí algoritmu Levenberg-Marquardtova.
+analyticky řešit. Vzhledem k~počtu potřebných výpočtů je aplikována ve formě
+počítačových algoritmů, například pomocí Levenberg-Marquardtova algoritmu.
 
 \paragraph{Analytické řešení} funguje na principu nalezení minima pomocí
 parciálního derivování podle všech neznámých parametrů. Z~těchto derivací
 následně vzniká soustava rovnic, kterou jsme schopni vyřešit. Je využívaná pro
-řešení lineárních problémů, kdy můžeme naší rovnici zapsat  pomocí
+řešení lineárních problémů, kdy můžeme naši rovnici zapsat pomocí
 polynomu~$n$-tého řádu.
 
 \subsubsection{Lineární regrese}
@@ -164,7 +166,10 @@ s~nulou.~\cite{wolfram}
 
 Po jednotlivém derivování funkce~$S$ podle~$a$ a~$b$ a~upravení výrazů
 dostáváme dvě rovnice~\eqref{eq:a_def} a~\eqref{eq:b_def}. Ty nám popisují onu
-lineární funkci jíž aproximujeme a~$a$ a~$b$ zde figurují jako proměnné. Ty
+lineární funkci, již aproximujeme a~$a$ a~$b$ zde figurují jako proměnné. Ty
+% po "aproximujeme" by mohla být čárka. Není, pokud kousek s proměnnými závisí
+% na tom, že funkci aproximujeme. Figurují-li jako proměnné tak jako tak,
+% čárka tam bude (neznalost problematiky mi nedovoluje na to sahat)
 ovšem v~tento moment neznáme, tedy pro nás to jsou v~tomto případě neznámé.
 To znamená, že se jedná o~soustavu dvou rovnic o~dvou neznámých, kterou můžeme
 jednoduše pomocí dosazovací metody vyřešit pro~$a$.
@@ -181,9 +186,9 @@ jednoduše pomocí dosazovací metody vyřešit pro~$a$.
 %    an\nsumxx-a\(\nsumx\)^2=n\nsumxy-\nsumx\nsumy\\
 %\end{gather*}
 
-A~protože nyní máme rovnici~\eqref{eq:a}  pro~$a$, můžeme jí dosadit do dříve
+A~protože nyní máme rovnici~\eqref{eq:a}  pro~$a$, můžeme ji dosadit do dříve
 odvozené rovnice~\eqref{eq:b_from_def}  pro~$b$, čímž dostáváme řešení této
-soustavy pro obě neznáme v~podobě rovností~\eqref{eq:a} a~\eqref{eq:b}.
+soustavy pro obě neznámé v~podobě rovností~\eqref{eq:a} a~\eqref{eq:b}.
 \eq[m]{
     b&=\frac{\nsumy-a\nsumx}{n}\\
     b&=\frac{\nsumy-\frac{n\nsumxy-\nsumx\nsumy}{n\nsumxx-\(\nsumx\)^2}\nsumx}{n}\\
