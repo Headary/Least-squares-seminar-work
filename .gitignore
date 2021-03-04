@@ -4,7 +4,7 @@ graf/*
 !graf/*.src.*
 figures/*
 !figures/*.src.*
-!figures/.jpg
+!figures/*.jpg
 simulation
 
 GSS_SP_Manual.pdf
