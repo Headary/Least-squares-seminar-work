@@ -2,7 +2,7 @@
 Měření a~zpracování dat je důležitou součástí vědeckého bádání. Abychom mohli
 teorii potvrdit experimenty, mnohdy pro to potřebujeme proložit naměřená data
 funkcí. V~tom nám pomáhá metoda nejmenších čtverců, která nám umožňuje najít
-ideální parametry funkce. Je možné jí používat iterativně za pomoci výpočetního
+ideální parametry funkce. Je možné ji používat iterativně za pomoci výpočetního
 výkonu počítačů, nebo analyticky vyřešením rovnice.
 
 Speciálním případem metody nejmenších čtverců je lineární regrese, která řeší
@@ -11,21 +11,28 @@ je lineárních, což vytváří široké možnosti využití.
 
 Jedním z~možných využití metody nejmenších čtverců je zjišťování parametrů
 v~případě termočlánků. Termočlánek je dvojice spolu spojených kovů, u~kterých se
+% vynechala bych "v případě"
 projevuje termoelektrický jev. Ten zapříčiňuje vytvoření napětí v~termočlánku
 v~případě rozdílu teplot spojů kovů. To může být výhodné pro použití
-termočlánků například jako teploměrů. 
+termočlánků například jako teploměry. 
+% akuzativ -- použití jako koho?/co?
 
 Abychom je ovšem mohli takto použít, musíme nejdříve zjistit, jak pro danou
 dvojici kovů závisí napětí na rozdílu teplot. Právě zde nám pomáhá metoda
 nejmenších čtverců, která nám umožňuje změřit napětí na termočlánku za různých
 teplot a~následně je použít pro zjištění koeficientu termočlánku.
+% Reformulovala bych, protože pomocí metody nejmenších čtverců neměříš, pouze
+% vyhodnocuješ. Návrh: Právě zde nám pomáhá metoda nejmenších čtverců, která
+% nám umožňuje použít naměřená napětí na termočlánku za různých teplot pro
+% zjištění koeficientu termočlánku. (vyřeší to i opakování "následně")
 Nalezení tohoto koeficientu nám následně umožňuje vypočítat, jaký rozdíl teplot
 se nachází na termočlánku, i~když změříme pouze napětí.
 
 V~této seminární práci se nám podařilo objasnit, jak zmiňovaná metoda
-nejmenších čtverců funguje, jak ji odvodit pro předpis funkce a~jak jí použít.
+nejmenších čtverců funguje, jak ji odvodit pro předpis funkce a~jak ji použít.
 Následně jsme si vysvětlili princip termoelektrického jevu, co je to
 termočlánek a~jak tyto dva pojmy spolu souvisí. Poté jsme si popsali sestavení
 vlastního termočlánku, pro který jsme následně změřili a~za pomoci lineární
 regrese určili parametr, čímž jsme se dopracovali k~cíli naší práce, tedy
 můžeme tuto seminární práci nazvat úspěšnou.
+% vyměnila bych "nazvat" za "považovat za"
