@@ -3,7 +3,10 @@
 
 \section{Výsledky}
 \subsection{Naměřená data}
-Experiment jsme měřili za pomoci dvou digitální teploměrů značky Vernier
+Data jsme měřili za pomoci dvou digitálních teploměrů značky Vernier
+% "Experiment jsme prováděli", nebo "data/teploty/(...) jsme měřili",
+% spíš ale ještě "data jsme získávali", každopádně "experiment jsme měřili"
+% je divné
 s~nejmenším dílkem o~velikosti~$"0.1 \C"$ a~analogového voltmetru
 o~přesnosti~$"0.2 mV"$ (obr.~\ref{fig:voltmetr}).
 
@@ -41,14 +44,15 @@ proložených funkcí.
 
 \subsection{Výpočet parametru}
 V~grafu~\ref{graph:data} jsme znázornili i~funkce, které aproximují naměřená
-data.  Ovšem otázkou zůstává, jak jsme k~nim došli.
+data. Otázkou ovšem zůstává, jak jsme k~nim došli.
 
 V~sekci~\ref{sec:efekty-termoelektrika} jsme si řekli, že za podmínky nízkého
 rozdílu teplot můžeme termoelektrické napětí popsat pomocí rovnice
 \eq{
     E = \alpha\Delta T\,.\lbl{eq:E}\,,
 }
-přičemž pro polovodič typu~T je závislost lineární zhruba  do~$"200 \C"$, což
+přičemž pro polovodič typu~T je závislost lineární zhruba do~$"200 \C"$, což
+% Ve 3.3 máš "termočlánek typu T". Má to tady opravdu být polovodič?
 naše data pohodlně splňují.~\cite{thermocoupleinfo}
 
 Tato rovnice neobsahuje konstantní složku, neboli $b=0$. To znamená, že funkce
@@ -59,7 +63,8 @@ vyjádřit pomocí zjednodušeného tvaru
     a = \frac{\nsumxy}{\nsumxx} \ztoho \alpha = \frac{\nsum \Delta T_i*E_i}
     {\nsum \(\Delta T_i\)^2}\,,
 }
-kterou získáváme při aplikaci postupu v~sekci~\ref{sec:lin-regrese} na 
+který získáváme při aplikaci postupu v~sekci~\ref{sec:lin-regrese} na 
+% "který", protože podmětem je "tvar"
 funkci~\eqref{eq:E}. Při aplikaci na všechna naměřená data dostáváme hodnotu
 koeficientu
 \eq{
@@ -67,15 +72,17 @@ koeficientu
 }
 
 \subsection{Přesnost modelu}
-Každé měření, včetně toho našeho, není naprosto přesné a~je v~něm nějaká chyba,
+Žádné měření, včetně toho našeho, není naprosto přesné. Vždy~je v~něm nějaká chyba,
+% #čeština a kouzla se zápory... Kvůli "žádné" bylo rovněž nutno štípnout
+% na dvě věty
 ať už to je chyba statistická či systematická. V~našem případě budeme chtít 
 spočítat, jak moc naměřená data odpovídají vypočítanému modelu. K~takovému
-popisu se často ve statistice používá hodnota označována  jako~$R^2$ s~definicí
+popisu se často ve statistice používá hodnota označovaná jako~$R^2$ s~definicí
 \eq{
     R^2 = 1 - \frac{\nsum (y_i - \hat y)^2}{\nsum (y_i - \bar y)^2}\,.
 }
 Zde $\bar y$ značí průměr naměřených hodnot, $\hat y$~je  předpovídaná hodnota
-dle modelu a~$y_i$ představuje jednotlivé naměřené hodnoty. Přepsáno do našich
+dle modelu a~$y_i$ představuje jednotlivé naměřené hodnoty. Přepsaná do našich
 hodnot nabývá rovnice tvaru
 \eq{
     R^2 = 1 - \frac{\nsum (E_i - \alpha\Delta T_i)^2}{\nsum (E_i - \bar E)^2}\,.
@@ -83,18 +90,21 @@ hodnot nabývá rovnice tvaru
 
 Po využití tohoto vztahu dostáváme hodnotu~$R^2 = "0.958~5" = "95.85 \%"$, ze
 které můžeme usuzovat, že naše měření bylo poměrně\footnotei{.}{To usuzujeme
-z~toho faktu, že nejvyšší  hodnota~$R^2$~je~$"100 \%"$.}
+% "poměrně přesné"? Chybí slovo
+z~faktu, že nejvyšší hodnota~$R^2$~je~$"100 \%"$.}
 
 \subsection{Diskuze}
-Jak můžeme vidět v~tabulce~\ref{tab:data} vidět, měřili jsme ochlazování pouze
-dvakrát. To ponechává možnost existence systematické chyby, ovšem bohužel kvůli
-nedostupnosti pomůcek a~pandemické situaci v~době vypracování této seminární
-práce nebylo možné výsledků získat více. V~ideální situaci by bylo využito
+Jak můžeme vidět v~tabulce~\ref{tab:data}, měřili jsme ochlazování pouze
+dvakrát. To ponechává možnost existence systematické chyby. Kvůli nedostupnosti
+pomůcek a~pandemické situaci v~době vypracování této seminární
+práce však bohužel nebylo možné výsledků získat více. V~ideální situaci by bylo využito
 digitálního milivoltmetru pro zachycení více výsledků a~eliminace lidské chyby,
-experiment změřen vícekrát a~byl by změřen i~při zahřívání, nejen při
-ochlazování.
+experiment by byl proveden vícekrát a~byl by proveden i~při zahřívání, nejen při
+% opět protestuji proti "měřit experiment"
+při ochlazování.
 
-Ovšem i~přes tyto fakty nemají naměřená data velkou chybu a~koeficient
-korelace~$R^2$ vyšel velice blízku~$"100 \%"$. Proto můžeme považovat
+I~přes tyto fakty ovšem nemají naměřená data velkou chybu a~koeficient
+korelace~$R^2$ vyšel velice blízký~$"100 \%"$. Proto můžeme považovat
 experiment v~rámci mezí za povedený s~vhodným podrobnějším přeměřením
+% dala bych "vydařený" místo "povedený", ale to je jen kosmetická
 v~budoucnosti.
