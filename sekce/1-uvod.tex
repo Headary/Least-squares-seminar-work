@@ -9,12 +9,12 @@ pravděpodobnost lidské chyby v~základních výpočtech a~umožňuje zpracovat
 velké množství dat.
 
 Data ovšem nejsou měřena bez nějakého účelu. Většinou se snažíme v~datech najít
-tendenci, změřit hodnotu závislosti či zkusit predikovat pomocí trendu,
-jak by vypadala data dosud nezměřená. Tyto problémy umíme řešit pomocí
-prokládání dat matematickými funkcemi. Proložení dat funkcí\footnote{známo také
-jako \emph{fitování} dat z~anglického \uv{fit}} nám umožňuje ověřit, zda
-předpis naší funkce odpovídá naměřeným datům, vypočítat neznámý parametr
-předpisu (využíváno například při počítání různých koeficientů materiálů), nebo
+tendenci, změřit hodnotu závislosti či predikovat pomocí trendu, jak by
+vypadala data dosud nezměřená. Tyto problémy umíme řešit pomocí prokládání dat
+matematickými funkcemi. Proložení dat funkcí\footnote{známo také jako
+\emph{fitování} dat z~anglického \uv{fit}} nám umožňuje ověřit, zda předpis
+naší funkce odpovídá naměřeným datům, vypočítat neznámý parametr předpisu
+(využíváno například při počítání různých koeficientů materiálů), nebo
 vyjádření závislé veličiny pro zatím neměřené vstupní hodnoty (např.~predikce
 počtu nakažených nemocí). Máme více možností, jak tohoto proložení dosáhnout,
 přičemž jednou z nejrozšířenějších je metoda nejmenších čtverců.
@@ -26,6 +26,7 @@ přičemž jednou z nejrozšířenějších je metoda nejmenších čtverců.
 Ovšem předtím, než začneme modelovat křivky či odvozovat, jak jednotlivé
 závislosti vypadají, musíme nejdříve naměřit samotná data. 
 %\subsection{Termočlánek}
+
 Jak již bylo zmíněno, digitální měřicí přístroje nahrazují přístroje analogové.
 Aby toho ovšem mohly dosáhnout, musí být schopné vytvářet signál přijatelný
 počítačem, což je ve velkém počtu případů změna napětí. 
@@ -39,7 +40,7 @@ jako teploměry.
 Ne všechny termočlánky jsou však identické. Každý typ termočlánku (respektive
 % ať už tam dáš cokoliv, nemůže to být na začátku ;)
 každá různá kombinace dvou kovů, z~nichž je termočlánek vyroben) má jinou
-závislost napětí na rozdílu teplot. Proto pro každou kombinaci kovů musí být
+závislost napětí na rozdílu teplot. Proto každá kombinace kovů musí být
 experimentálně změřena a~následně je pro ni určena ona závislost.
 
 V~této seminární práci si proto ukážeme a~vysvětlíme metodu nejmenších čtverců,
