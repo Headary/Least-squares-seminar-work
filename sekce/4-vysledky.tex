@@ -2,13 +2,116 @@
 % Odchylky nepřímé: https://physics.mff.cuni.cz/kfnt/nmr/download/chlan/NAFY003/neprime_mereni.pdf
 
 \section{Výsledky}
-\subfile{4.1-experiment.tex}
+% --- PRINCIP ---
+\subsection{Popis experimentu}
+Jak název této seminární práce napovídá, naším konečným cílem je stanovení
+parametru termočlánku~$\alpha$. A~toho nedosáhneme žádnou jinou cestou než
+experimentem. V~našem případě se bude jednat konkrétně o~měření parametru
+termočlánku typu~T.
 
+\subsubsection{Princip měření}
+Experiment spočívá v ochlazování jednoho a~ohřívání druhého konce termočlánku%
+\footnotei{.}{Místa spojů kovů} Toho docílíme ponořením prvního
+spoje do vody s~ledem (kde udržujeme zhruba~$"0 \C"$) a~druhého do vroucí vody.
+% "vařící" by muselo být se zvratným zájmenem "se"
+Ta se během experimentu ochlazuje kvůli předávání tepla okolí. Toho mi
+využijeme a~pozorujeme pomocí milivoltmetru, jak se napětí na termočlánku
+mění v~závislosti na rozdílu teplot vody s~ledem a~vody teplé.
+
+\subsubsection{Aparatura experimentu}
+Na provedení samotného experimentu je zapotřebí termočlánku, vlastnoručně
+zkonstruovaného pro lepší manipulaci, termosky (či jinak tepelně izolované
+nádoby), kádinky, ledu, dvou teploměrů, milivoltmetru a~způsobu ohřevu vody.
+V~našem případě se jednalo o~rychlovarnou konvici.
+
+\subsubsection{Sestavení termočlánku}
+%Abychom mohli náš termočlánek měřit, musíme jej nejdříve sestavit. 
+Jak již bylo zmíněno, náš termočlánek je vlastnoručně vyroben pro umožnění
+jednodušší konstrukce experimentu. Protože se jedná o~typ~T, vytváříme jej
+z~mědi a~konstantanu. 
+
+\fullfig[width=0.55\textwidth]{schema_stavba}[Schéma sestavení termočlánku]
+
+Stavbu termočlánku zahájíme zaizolováním obou drátů pro ochranu mimo místa, kde
+jsou dráty spojeny či připojeny k~externímu zařízení, konkrétně milivoltmetru.
+
+Následně si připravíme dřevěnou desku, na které celá konstrukce drží.
+Do ní vyvrtáme díry v~pravidelných rozestupech a~do krajních děr upevníme
+% rozestupy zní pro díry poněkud lidštěji
+konektory sloužící pro následné připojení termočlánku k~měřidlu. Zaizolovaný
+drát konstantanu protáhneme skrz dříve vyvrtané díry a~přizpůsobíme
+délku drátu. Konce konstantanu odizolujeme a~připravíme k~následnému
+připojení k~mědi.
+
+Připravený drát mědi rozdělíme tak, abychom dostali dva kusy, které mají
+ideální délku na spojení konců konstantanového vodiče a~připravených konektorů.
+Konce těchto dvou drátů odizolujeme, uchytíme je v~koncovkách a~opačné
+konce zakroutíme do sebe s~odizolovanými konci konstantanu%
+\footnotei{.}{Při spojování mědi a~konstantanu si musíme dát pozor na to,
+abychom se vyhnuli potřebě pájení. To by totiž přidalo do zařízení další kov
+a~ovlivnilo výsledky.}
+Konce pevně zakroucené do sebe zaizolujeme smršťovací bužírkou pro ochranu
+před okolím\footnotei{.}{Toto můžeme provést, protože budeme tyto spoje 
+ovlivňovat teplotou, před čímž kousek plastu moc dobře neizoluje a~stejně by 
+získal teplotu okolí.}
+
+Jako poslední zasuneme vodiče do plastových trubiček a~ty připevníme pomocí
+kobercové pásky k~desce. Celý sestavený termočlánek je ukázán na
+obrázku~\ref{fig:termoclanek}.
+
+\subsubsection{Popis postupu}
+Aby byl termočlánek stabilní a~statický, upevníme jej na stojan do takové
+výšky, aby konce termočlánku se spoji kovů pohodlně dosáhly do kádinky
+a~termosky. Na vlastní stojany připevníme také oba teploměry, jeden
+směřující do kádinky a~druhý do termosky, abychom mohli během experimentu
+pozorovat teplotní rozdíl. V~neposlední řadě připojíme k~termočlánku
+milivoltmetr pro měření napětí na termočlánku. 
+
+Do termosky nalijeme vodu, přidáme do ní led a~vyčkáme, dokud se teplota
+neustálí (výsledná teplota by se měla pohybovat okolo~$"0 \C"$). Následně
+nalijeme horkou, až vroucí, vodu do kádinky a~započneme měření. Při klesání
+rozdílu teplot pravidelně odečítáme hodnoty obou teploměrů a~milivoltmetru
+do momentu, kdy se teplota teplé vody ustálí na pokojové teplotě, kdy se
+již rozdíl teplot kádinky a~termosky více nemění.
+
+
+% --- VÝPOČET ---
+\subsection{Výpočet parametru}
+%V~grafu~\ref{graph:data} jsme znázornili i~funkce, které aproximují naměřená
+%data. Otázkou ovšem zůstává, jak jsme k~nim došli.
+Naměření dat je pouze polovina toho, co musíme v experimentu provést. Abychom
+mohli vyvodit nějaké závěry a tvrzení, musí být naměřená data zpracovaná,
+především musí být vypočítán samotný parametr termočlánku, kvůli kterému
+celé měření provádíme.
+
+V~sekci~\ref{sec:efekty-termoelektrika} jsme si řekli, že za podmínky nízkého
+rozdílu teplot můžeme termoelektrické napětí popsat pomocí rovnice
+\eq{
+    E = \alpha\Delta T\,.\lbl{eq:E}\,,
+}
+přičemž pro termočlánek typu~T je závislost lineární zhruba do~$"200 \C"$, což
+naše data pohodlně splňují.~\cite{thermocoupleinfo}
+
+Tato rovnice neobsahuje konstantní složku, neboli $b=0$. To znamená, že funkce
+prochází nulou a~vyskytuje se v~ní pouze jedna neznámá: $\alpha$. Tím pádem
+nemusíme pro výpočet parametru používat rovnici~\eqref{eq:a}, ale můžeme jej
+vyjádřit pomocí zjednodušeného tvaru
+\eq{
+    a = \frac{\nsumxy}{\nsumxx} \ztoho \alpha = \frac{\nsum \Delta T_i*E_i}
+    {\nsum \(\Delta T_i\)^2}\lbl{eq:thermo_param}\,,
+}
+který získáváme při aplikaci postupu v~sekci~\ref{sec:lin-regrese} na 
+funkci~\eqref{eq:E}. 
+%Při aplikaci na všechna naměřená data dostáváme hodnotu
+%koeficientu
+%\eq{
+%    \alpha = "0.036~2 mV.\C^{-1}"\,.
+%}
+
+
+% --- DATA ---
 \subsection{Naměřená data}
-Data jsme měřili za pomoci dvou digitálních teploměrů značky Vernier
-% "Experiment jsme prováděli", nebo "data/teploty/(...) jsme měřili",
-% spíš ale ještě "data jsme získávali", každopádně "experiment jsme měřili"
-% je divné
+Data jsou měřena za pomoci dvou digitálních teploměrů značky Vernier
 s~nejmenším dílkem o~velikosti~$"0.1 \C"$ a~analogového voltmetru
 o~přesnosti~$"0.2 mV"$ (obr.~\ref{fig:voltmetr}).
 
@@ -20,19 +123,6 @@ o~přesnosti~$"0.2 mV"$ (obr.~\ref{fig:voltmetr}).
         $i$ & \popi{\Delta T}{\C} & \popi{E_1}{mV} & \popi{E_2}{mV} & \popi{\overline{E}}{mV} &
         \popi{\(\Delta T\)^2}{\C^2} & \popi{\Delta T * \overline{E}}{mV\C}\\
         \midrule
-%        $80$ & $"2.8"$ & $"2.8"$\\
-%        $75$ & $"2.8"$ & $"2.6"$\\
-%        $70$ & $"2.6"$ & $"2.4"$\\
-%        $65$ & $"2.4"$ & $"2.2"$\\
-%        $60$ & $"2.2"$ & $"2.0"$\\
-%        $55$ & $"2.0"$ & $"2.0"$\\
-%        $50$ & $"1.8"$ & $"1.8"$\\
-%        $45$ & $"1.8"$ & $"1.6"$\\
-%        $40$ & $"1.6"$ & $"1.4"$\\
-%        $35$ & $"1.2"$ & $"1.4"$\\
-%        $30$ & $"1.2"$ & $"1.2"$\\
-%        $25$ & $"1.0"$ & $"1.0"$\\
-%        $20$ & $"1.0"$ & $"1.0"$\\
         $"1"$  & $"80"$ & $"2,8"$ & $"2,8"$ & $"2,8"$ & $"6~400"$ & $"224,0"$ \\
         $"2"$  & $"75"$ & $"2,8"$ & $"2,6"$ & $"2,7"$ & $"5~625"$ & $"202,5"$ \\
         $"3"$  & $"70"$ & $"2,6"$ & $"2,4"$ & $"2,5"$ & $"4~900"$ & $"175,0"$ \\
@@ -46,48 +136,27 @@ o~přesnosti~$"0.2 mV"$ (obr.~\ref{fig:voltmetr}).
         $"11"$ & $"30"$ & $"1,2"$ & $"1,2"$ & $"1,2"$ & $"\phantom{0 }900"$   & $"36,0"$  \\
         $"12"$ & $"25"$ & $"1,0"$ & $"1,0"$ & $"1,0"$ & $"\phantom{0 }625"$   & $"25,0"$  \\
         $"13"$ & $"20"$ & $"1,0"$ & $"1,0"$ & $"1,0"$ & $"\phantom{0 }400"$   & $"20,0"$  \\
+        \midrule
+        \multicolumn{5}{r|}{$\sum$} & $"37~050"$ & $"1~340.0"$\\
         \bottomrule
     \end{tabular}
     \caption{Naměřená data}
     \label{tab:data}
 \end{table}
 
-Z~těchto dat můžeme vytvořit graf~\ref{graph:data} znázorňující data včetně 
-proložených funkcí.
-
-% graf
-\plotfig{graf/data.tex}[Graf naměřených dat][graph:data]
-
-\subsection{Výpočet parametru}
-V~grafu~\ref{graph:data} jsme znázornili i~funkce, které aproximují naměřená
-data. Otázkou ovšem zůstává, jak jsme k~nim došli.
-
-V~sekci~\ref{sec:efekty-termoelektrika} jsme si řekli, že za podmínky nízkého
-rozdílu teplot můžeme termoelektrické napětí popsat pomocí rovnice
-\eq{
-    E = \alpha\Delta T\,.\lbl{eq:E}\,,
-}
-přičemž pro termočlánek typu~T je závislost lineární zhruba do~$"200 \C"$, což
-% Ve 3.3 máš "termočlánek typu T". Má to tady opravdu být polovodič?
-%   Ne, nemá
-naše data pohodlně splňují.~\cite{thermocoupleinfo}
-
-Tato rovnice neobsahuje konstantní složku, neboli $b=0$. To znamená, že funkce
-prochází nulou a~vyskytuje se v~ní pouze jedna neznámá: $\alpha$. Tím pádem
-nemusíme pro výpočet parametru používat rovnici~\eqref{eq:a}, ale můžeme jej
-vyjádřit pomocí zjednodušeného tvaru
-\eq{
-    a = \frac{\nsumxy}{\nsumxx} \ztoho \alpha = \frac{\nsum \Delta T_i*E_i}
-    {\nsum \(\Delta T_i\)^2}\,,
-}
-který získáváme při aplikaci postupu v~sekci~\ref{sec:lin-regrese} na 
-% "který", protože podmětem je "tvar"
-funkci~\eqref{eq:E}. Při aplikaci na všechna naměřená data dostáváme hodnotu
-koeficientu
+Z~těchto dat můžeme vytvořit graf~\ref{graph:data} znázorňující data. Ten je
+uveden včetně proložené funkce s předpisem shodným s rovnicí~\ref{eq:E}. 
+V tomto přepisu neznáme parametr~$\alpha$. Ten je vypočitatelný
+z~rovnice~\ref{eq:thermo_param} a jeho hodnota je
 \eq{
     \alpha = "0.036~2 mV.\C^{-1}"\,.
 }
 
+% graf
+\plotfig{graf/data.tex}[Graf naměřených dat][graph:data]
+
+
+% --- Přesnost modelu ---
 \subsection{Přesnost modelu}
 Žádné měření, včetně toho našeho, není naprosto přesné. Vždy~je v~něm nějaká chyba,
 % #čeština a kouzla se zápory... Kvůli "žádné" bylo rovněž nutno štípnout
@@ -98,17 +167,19 @@ popisu se často ve statistice používá hodnota označovaná jako~$R^2$ s~defi
 \eq{
     R^2 = 1 - \frac{\nsum (y_i - \hat y)^2}{\nsum (y_i - \bar y)^2}\,.
 }
-Zde $\bar y$ značí průměr naměřených hodnot, $\hat y$~je  předpovídaná hodnota
-dle modelu a~$y_i$ představuje jednotlivé naměřené hodnoty. Přepsaná do našich
-hodnot nabývá rovnice tvaru
+Zde $\bar y$ značí průměr všech naměřených hodnot, $\hat y$~je předpovídaná
+hodnota dle modelu a~$y_i$ představuje jednotlivé naměřené hodnoty. Přepsaná do
+našich hodnot nabývá rovnice tvaru
 \eq{
     R^2 = 1 - \frac{\nsum (E_i - \alpha\Delta T_i)^2}{\nsum (E_i - \bar E)^2}\,.
 }
 
-Po využití tohoto vztahu dostáváme hodnotu~$R^2 = "0.958~5" = "95.85 \%"$, ze
-které můžeme usuzovat, že naše měření bylo poměrně přesné\footnotei{.}{To usuzujeme
-% "poměrně přesné"? Chybí slovo
-z~faktu, že nejvyšší hodnota~$R^2$~je~$"100 \%"$.}
+Po využití tohoto vztahu\footnote{Do vztahu jsou doplněna všechna naměřená data
+(sloupce~$E_1$ a~$E_2$ v~tabulce~\ref{tab:data}), né pouhé průměry pro
+jednotlivé rozdíly teplot (sloupec~$\overline{E}$).} dostáváme 
+hodnotu~$R^2 = "0.958~5" = "95.85 \%"$, ze které můžeme usuzovat, že naše 
+měření bylo poměrně přesné\footnotei{.}{To usuzujeme z~faktu, že nejvyšší 
+hodnota~$R^2$~je~$"100 \%"$.}
 
 \subsection{Diskuze}
 Jak můžeme vidět v~tabulce~\ref{tab:data}, měřili jsme ochlazování pouze

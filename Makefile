@@ -29,8 +29,6 @@ figures/%.eps: figures/%.src.svg
 
 graf/%.tex: graf/%.src.plt
 	cd graf && gnuplot -e "set format '$$\"%g\"$$'; set terminal epslatex color size 15.7cm,8.4cm; set output '$(@F)'" $(<F)
-	sed -i -e "s/\\includegraphics\[\(.*\)\]{\(.*\)}}/\\includegraphics\[\1\]{graf\/\2.eps}}/" $@
 
 graf/%.tex: graf/%.src.plt graf/%.src.dat
 	cd graf && gnuplot -e "set format '$$\"%g\"$$'; set terminal epslatex color size 15.7cm,8.4cm; set output '$(@F)'" $(<F)
-	sed -i -e "s/\\includegraphics\[\(.*\)\]{\(.*\)}}/\\includegraphics\[\1\]{graf\/\2.eps}}/" $@
