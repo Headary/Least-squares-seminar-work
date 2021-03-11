@@ -120,7 +120,7 @@
 
         \vspace{2.5cm}
 
-        Mikulov 2020
+        Mikulov 2021
         \vfill
         Autor: \@author \hfill Vedoucí: \@leader
         \vspace{1cm}}
