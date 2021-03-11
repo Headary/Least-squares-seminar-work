@@ -59,7 +59,7 @@ Jako poslední zasuneme vodiče do plastových trubiček a~ty připevníme pomoc
 kobercové pásky k~desce. Celý sestavený termočlánek je ukázán na
 obrázku~\ref{fig:termoclanek}.
 
-\subsubsection{Popis postupu}
+\subsubsection{Postup práce}
 Aby byl termočlánek stabilní a~statický, upevníme jej na stojan do takové
 výšky, aby konce termočlánku se spoji kovů pohodlně dosáhly do kádinky
 a~termosky. Na vlastní stojany připevníme také oba teploměry, jeden
@@ -114,14 +114,20 @@ funkci~\eqref{eq:E}.
 Data jsou měřena za pomoci dvou digitálních teploměrů značky Vernier
 s~nejmenším dílkem o~velikosti~$"0.1 \C"$ a~analogového voltmetru
 o~přesnosti~$"0.2 mV"$ (obr.~\ref{fig:voltmetr}).
+Místnost, ve níž byl experiment měřen, měla konstantní teplotu~$"21 \C"$,
+přičemž tlak vzduchu v místnosti byl~$"1~008 hPa"$ a vlhkost vzduchu se
+pohybovala okolo~$"60 \%"$.
+
+Měření napětí bylo provedeno dvakrát, v obou případech při snižování rozdílu 
+teplot, tedy ochlazování teplého konce termočlánku.
 
 % tabulka dat
 \begin{table}[htbp]
     \centering
     \begin{tabular}{r|cccc|cc}
         \toprule
-        $i$ & \popi{\Delta T}{\C} & \popi{E_1}{mV} & \popi{E_2}{mV} & \popi{\overline{E}}{mV} &
-        \popi{\(\Delta T\)^2}{\C^2} & \popi{\Delta T * \overline{E}}{mV\C}\\
+        $i$ & \popi{\Delta T}{\C} & \popi{E_1}{mV} & \popi{E_2}{mV} & \popi{\avg{E}}{mV} &
+        \popi{\(\Delta T\)^2}{\C^2} & \popi{\Delta T * \avg{E}}{mV\C}\\
         \midrule
         $"1"$  & $"80"$ & $"2,8"$ & $"2,8"$ & $"2,8"$ & $"6~400"$ & $"224,0"$ \\
         $"2"$  & $"75"$ & $"2,8"$ & $"2,6"$ & $"2,7"$ & $"5~625"$ & $"202,5"$ \\
@@ -157,7 +163,8 @@ z~rovnice~\ref{eq:thermo_param} a jeho hodnota je
 
 
 % --- Přesnost modelu ---
-\subsection{Přesnost modelu}
+\subsubsection{Přesnost modelu}
+\label{sec:presnost}
 Žádné měření, včetně toho našeho, není naprosto přesné. Vždy~je v~něm nějaká chyba,
 % #čeština a kouzla se zápory... Kvůli "žádné" bylo rovněž nutno štípnout
 % na dvě věty
@@ -165,18 +172,18 @@ ať už to je chyba statistická či systematická. V~našem případě budeme c
 spočítat, jak moc naměřená data odpovídají vypočítanému modelu. K~takovému
 popisu se často ve statistice používá hodnota označovaná jako~$R^2$ s~definicí
 \eq{
-    R^2 = 1 - \frac{\nsum (y_i - \hat y)^2}{\nsum (y_i - \bar y)^2}\,.
+    R^2 = 1 - \frac{\nsum (y_i - \hat y)^2}{\nsum (y_i - \avg y)^2}\,.
 }
-Zde $\bar y$ značí průměr všech naměřených hodnot, $\hat y$~je předpovídaná
+Zde $\avg y$ značí průměr všech naměřených hodnot, $\hat y$~je předpovídaná
 hodnota dle modelu a~$y_i$ představuje jednotlivé naměřené hodnoty. Přepsaná do
 našich hodnot nabývá rovnice tvaru
 \eq{
-    R^2 = 1 - \frac{\nsum (E_i - \alpha\Delta T_i)^2}{\nsum (E_i - \bar E)^2}\,.
+    R^2 = 1 - \frac{\nsum (E_i - \alpha\Delta T_i)^2}{\nsum (E_i - \avg E)^2}\,.
 }
 
 Po využití tohoto vztahu\footnote{Do vztahu jsou doplněna všechna naměřená data
 (sloupce~$E_1$ a~$E_2$ v~tabulce~\ref{tab:data}), né pouhé průměry pro
-jednotlivé rozdíly teplot (sloupec~$\overline{E}$).} dostáváme 
+jednotlivé rozdíly teplot (sloupec~$\avg{E}$).} dostáváme 
 hodnotu~$R^2 = "0.958~5" = "95.85 \%"$, ze které můžeme usuzovat, že naše 
 měření bylo poměrně přesné\footnotei{.}{To usuzujeme z~faktu, že nejvyšší 
 hodnota~$R^2$~je~$"100 \%"$.}
@@ -184,12 +191,12 @@ hodnota~$R^2$~je~$"100 \%"$.}
 \subsection{Diskuze}
 Jak můžeme vidět v~tabulce~\ref{tab:data}, měřili jsme ochlazování pouze
 dvakrát. To ponechává možnost existence systematické chyby. Kvůli nedostupnosti
-pomůcek a~pandemické situaci v~době vypracování této seminární
-práce však bohužel nebylo možné výsledků získat více. V~ideální situaci by bylo využito
+pomůcek a~pandemické situaci v~době vypracování této seminární práce však
+bohužel nebylo možné výsledků získat více. V~ideální situaci by bylo využito
 digitálního milivoltmetru pro zachycení více výsledků a~eliminace lidské chyby,
-experiment by byl proveden vícekrát a~byl by proveden i~při zahřívání, nejen při
-% opět protestuji proti "měřit experiment"
+experiment by byl proveden vícekrát a~byl by proveden i~při zahřívání, nejen
 při ochlazování.
+% opět protestuji proti "měřit experiment"
 
 I~přes tyto fakty ovšem nemají naměřená data velkou chybu a~koeficient
 korelace~$R^2$ vyšel velice blízký~$"100 \%"$. Proto můžeme považovat
