@@ -84,6 +84,7 @@
     \newcommand\podekovani[1]{\renewcommand\@podekovani{#1}}
 
 \newcommand\mcite[1]{\mbox{\cite{#1}}}
+\newcommand\avg[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 \renewcommand{\maketitle}{
     \firstpage

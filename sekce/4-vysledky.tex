@@ -6,15 +6,15 @@
 \subsection{Popis experimentu}
 Jak název této seminární práce napovídá, naším konečným cílem je stanovení
 parametru termočlánku~$\alpha$. A~toho nedosáhneme žádnou jinou cestou než
-experimentem. V~našem případě se bude jednat konkrétně o~měření parametru
-termočlánku typu~T.
+experimentem. V~našem případě se bude jednat o~měření parametru termočlánku
+typu~T.
 
 \subsubsection{Princip měření}
 Experiment spočívá v ochlazování jednoho a~ohřívání druhého konce termočlánku%
 \footnotei{.}{Místa spojů kovů} Toho docílíme ponořením prvního
 spoje do vody s~ledem (kde udržujeme zhruba~$"0 \C"$) a~druhého do vroucí vody.
 % "vařící" by muselo být se zvratným zájmenem "se"
-Ta se během experimentu ochlazuje kvůli předávání tepla okolí. Toho mi
+Ta se během experimentu ochlazuje kvůli předávání tepla do okolí. Toho mi
 využijeme a~pozorujeme pomocí milivoltmetru, jak se napětí na termočlánku
 mění v~závislosti na rozdílu teplot vody s~ledem a~vody teplé.
 
@@ -29,8 +29,6 @@ V~našem případě se jednalo o~rychlovarnou konvici.
 Jak již bylo zmíněno, náš termočlánek je vlastnoručně vyroben pro umožnění
 jednodušší konstrukce experimentu. Protože se jedná o~typ~T, vytváříme jej
 z~mědi a~konstantanu. 
-
-\fullfig[width=0.55\textwidth]{schema_stavba}[Schéma sestavení termočlánku]
 
 Stavbu termočlánku zahájíme zaizolováním obou drátů pro ochranu mimo místa, kde
 jsou dráty spojeny či připojeny k~externímu zařízení, konkrétně milivoltmetru.
@@ -59,6 +57,8 @@ Jako poslední zasuneme vodiče do plastových trubiček a~ty připevníme pomoc
 kobercové pásky k~desce. Celý sestavený termočlánek je ukázán na
 obrázku~\ref{fig:termoclanek}.
 
+\fullfig[width=0.6\textwidth]{schema_stavba}[Schéma sestavení termočlánku]
+
 \subsubsection{Postup práce}
 Aby byl termočlánek stabilní a~statický, upevníme jej na stojan do takové
 výšky, aby konce termočlánku se spoji kovů pohodlně dosáhly do kádinky
@@ -67,6 +67,12 @@ směřující do kádinky a~druhý do termosky, abychom mohli během experimentu
 pozorovat teplotní rozdíl. V~neposlední řadě připojíme k~termočlánku
 milivoltmetr pro měření napětí na termočlánku. 
 
+\opt{normal}{
+    \fullfig{schema_exp}[Schéma sestavení experimentu]
+}
+\opt{forschool}{
+    \fullfig[width=0.6\textwidth]{schema_exp}[Schéma sestavení experimentu]
+}
 Do termosky nalijeme vodu, přidáme do ní led a~vyčkáme, dokud se teplota
 neustálí (výsledná teplota by se měla pohybovat okolo~$"0 \C"$). Následně
 nalijeme horkou, až vroucí, vodu do kádinky a~započneme měření. Při klesání
@@ -114,11 +120,11 @@ funkci~\eqref{eq:E}.
 Data jsou měřena za pomoci dvou digitálních teploměrů značky Vernier
 s~nejmenším dílkem o~velikosti~$"0.1 \C"$ a~analogového voltmetru
 o~přesnosti~$"0.2 mV"$ (obr.~\ref{fig:voltmetr}).
-Místnost, ve níž byl experiment měřen, měla konstantní teplotu~$"21 \C"$,
-přičemž tlak vzduchu v místnosti byl~$"1~008 hPa"$ a vlhkost vzduchu se
+Místnost, v~níž byl experiment měřen, měla konstantní teplotu~$"21 \C"$,
+přičemž tlak vzduchu v~místnosti byl~$"1~008 hPa"$ a~vlhkost vzduchu se
 pohybovala okolo~$"60 \%"$.
 
-Měření napětí bylo provedeno dvakrát, v obou případech při snižování rozdílu 
+Měření napětí bylo provedeno dvakrát, v~obou případech při snižování rozdílu 
 teplot, tedy ochlazování teplého konce termočlánku.
 
 % tabulka dat
@@ -152,7 +158,7 @@ teplot, tedy ochlazování teplého konce termočlánku.
 
 Z~těchto dat můžeme vytvořit graf~\ref{graph:data} znázorňující data. Ten je
 uveden včetně proložené funkce s předpisem shodným s rovnicí~\ref{eq:E}. 
-V tomto přepisu neznáme parametr~$\alpha$. Ten je vypočitatelný
+V tomto přepisu neznáme parametr~$\alpha$, jenž je ale vypočitatelný
 z~rovnice~\ref{eq:thermo_param} a jeho hodnota je
 \eq{
     \alpha = "0.036~2 mV.\C^{-1}"\,.
