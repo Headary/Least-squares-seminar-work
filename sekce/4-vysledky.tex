@@ -14,7 +14,7 @@ Experiment spočívá v ochlazování jednoho a~ohřívání druhého konce term
 \footnotei{.}{Místa spojů kovů} Toho docílíme ponořením prvního
 spoje do vody s~ledem (kde udržujeme zhruba~$"0 \C"$) a~druhého do vroucí vody.
 % "vařící" by muselo být se zvratným zájmenem "se"
-Ta se během experimentu ochlazuje kvůli předávání tepla do okolí. Toho my
+Ta se během experimentu ochlazuje kvůli předávání tepla do okolí. Toho
 % "my" technicky vzato není nutné
 využijeme a~pozorujeme pomocí milivoltmetru, jak se napětí na termočlánku
 mění v~závislosti na rozdílu teplot vody s~ledem a~vody teplé.
@@ -22,7 +22,7 @@ mění v~závislosti na rozdílu teplot vody s~ledem a~vody teplé.
 \subsubsection{Aparatura experimentu}
 Na provedení samotného experimentu je zapotřebí termočlánku, vlastnoručně
 zkonstruovaného pro lepší manipulaci, termosky (či jinak tepelně izolované
-nádoby), kádinky, ledu, dvou teploměrů, milivoltmetru a~způsobu ohřevu vody.
+nádoby), kádinky, ledu, dvou teploměrů, milivoltmetru a~zařízení k ohřevu vody.
 % Když rychlovarka, tak možná spíš "zařízení k ohřevu vody"? Jen kosmetická.
 V~našem případě se jednalo o~rychlovarnou konvici.
 
@@ -53,15 +53,17 @@ a~ovlivnilo výsledky.}
 Konce pevně zakroucené do sebe zaizolujeme smršťovací bužírkou pro ochranu
 před okolím\footnotei{.}{Toto můžeme provést, protože budeme tyto spoje 
 % "tyto" lze eventuelně vyjmout
-ovlivňovat teplotou, před čímž kousek plastu moc dobře neizoluje a~stejně by
+ovlivňovat teplotou, před čímž kousek plastu moc dobře neizoluje a~tak či tak
 % "moc" bych nahradila "tak", ale to je jen kosmetická a není nutná. 
-získal teplotu okolí.}
+%   to bych spíš použil v kontextu "neizoluje tak dobře jako", tady to je prostě 
+%   jen to, že je v tom špatný
+by získal teplotu okolí.}
 
 Jako poslední zasuneme vodiče do plastových trubiček a~ty připevníme pomocí
 kobercové pásky k~desce. Celý sestavený termočlánek je ukázán na
 obrázku~\ref{fig:termoclanek}.
 
-\fullfig[width=0.6\textwidth]{schema_stavba}[Schéma sestavení termočlánku]
+\fullfig[width=0.70\textwidth]{schema_stavba}[Schéma sestavení termočlánku]
 
 \subsubsection{Postup práce}
 Aby byl termočlánek stabilní a~statický, upevníme jej na stojan do takové
@@ -71,12 +73,8 @@ směřující do kádinky a~druhý do termosky, abychom mohli během experimentu
 pozorovat teplotní rozdíl. V~neposlední řadě připojíme k~termočlánku
 milivoltmetr pro měření napětí na termočlánku. 
 
-\opt{normal}{
-    \fullfig{schema_exp}[Schéma sestavení experimentu]
-}
-\opt{forschool}{
-    \fullfig[width=0.6\textwidth]{schema_exp}[Schéma sestavení experimentu]
-}
+\fullfig[width=0.6\textwidth]{schema_exp}[Schéma sestavení experimentu]
+
 Do termosky nalijeme vodu, přidáme do ní led a~vyčkáme, dokud se teplota
 neustálí (výsledná teplota by se měla pohybovat okolo~$"0 \C"$). Následně
 nalijeme horkou, až vroucí, vodu do kádinky a~započneme měření. Při klesání
@@ -89,9 +87,9 @@ již rozdíl teplot kádinky a~termosky více nemění.
 \subsection{Výpočet parametru}
 %V~grafu~\ref{graph:data} jsme znázornili i~funkce, které aproximují naměřená
 %data. Otázkou ovšem zůstává, jak jsme k~nim došli.
-Naměření dat je pouze polovina toho, co musíme v experimentu provést. Abychom
-% změnila bych "Naměření" na "Měření"
-mohli vyvodit nějaké závěry a tvrzení, musí být naměřená data zpracovaná,
+Měření dat je pouze polovina toho, co musíme v experimentu provést. Aby bylo
+možné vyvodit závěry a potvrdit či vyvrátit počáteční tvrzení, musí být
+naměřená data zpracovaná,
 % "tvrzení" jsou "nějaká", tedy nesedí vazba, ale opakování slov mi nepřipadá
 % jako ideální řešení. Buďto lehkou reformulaci, nebo doufat, že se to ztratí? 
 především musí být vypočítán samotný parametr termočlánku, kvůli kterému
@@ -163,10 +161,11 @@ teplot, tedy ochlazování teplého konce termočlánku.
     \label{tab:data}
 \end{table}
 
-Z~těchto dat můžeme vytvořit graf~\ref{graph:data} znázorňující data. Ten je
+Z~těchto dat můžeme vytvořit graf~\ref{graph:data} znázorňující jednotlivé 
+datové body společně
 % "znázorňující data" bych vyměnila za závislost, která v grafu je, protože
 % z dat tvoříme graf znázorňující data zní divně
-uveden včetně proložené funkce s předpisem shodným s rovnicí~\ref{eq:E}. 
+s proloženou funkcí, jejíž předpis je shodný s rovnicí~\ref{eq:E}. 
 V tomto předpisu neznáme parametr~$\alpha$, jenž je ale vypočítatelný
 z~rovnice~\ref{eq:thermo_param} a jeho hodnota je
 \eq{
@@ -199,6 +198,7 @@ našich hodnot nabývá rovnice tvaru
 Po využití tohoto vztahu\footnote{Do vztahu jsou doplněna všechna naměřená data
 (sloupce~$E_1$ a~$E_2$ v~tabulce~\ref{tab:data}), ne pouhé průměry pro
 % Má tam být "ne", nebo je to nedokončené slovo?
+%   má tam být ne, ve smyslu "nejsou tam průměry, ale všechna data"
 jednotlivé rozdíly teplot (sloupec~$\avg{E}$).} dostáváme 
 hodnotu~$R^2 = "0.958~5" = "95.85 \%"$, ze které můžeme usuzovat, že naše 
 měření bylo poměrně přesné\footnotei{.}{To usuzujeme z~faktu, že nejvyšší 
