@@ -14,7 +14,8 @@ Experiment spočívá v ochlazování jednoho a~ohřívání druhého konce term
 \footnotei{.}{Místa spojů kovů} Toho docílíme ponořením prvního
 spoje do vody s~ledem (kde udržujeme zhruba~$"0 \C"$) a~druhého do vroucí vody.
 % "vařící" by muselo být se zvratným zájmenem "se"
-Ta se během experimentu ochlazuje kvůli předávání tepla do okolí. Toho mi
+Ta se během experimentu ochlazuje kvůli předávání tepla do okolí. Toho my
+% "my" technicky vzato není nutné
 využijeme a~pozorujeme pomocí milivoltmetru, jak se napětí na termočlánku
 mění v~závislosti na rozdílu teplot vody s~ledem a~vody teplé.
 
@@ -22,6 +23,7 @@ mění v~závislosti na rozdílu teplot vody s~ledem a~vody teplé.
 Na provedení samotného experimentu je zapotřebí termočlánku, vlastnoručně
 zkonstruovaného pro lepší manipulaci, termosky (či jinak tepelně izolované
 nádoby), kádinky, ledu, dvou teploměrů, milivoltmetru a~způsobu ohřevu vody.
+% Když rychlovarka, tak možná spíš "zařízení k ohřevu vody"? Jen kosmetická.
 V~našem případě se jednalo o~rychlovarnou konvici.
 
 \subsubsection{Sestavení termočlánku}
@@ -50,7 +52,9 @@ abychom se vyhnuli potřebě pájení. To by totiž přidalo do zařízení dal�
 a~ovlivnilo výsledky.}
 Konce pevně zakroucené do sebe zaizolujeme smršťovací bužírkou pro ochranu
 před okolím\footnotei{.}{Toto můžeme provést, protože budeme tyto spoje 
-ovlivňovat teplotou, před čímž kousek plastu moc dobře neizoluje a~stejně by 
+% "tyto" lze eventuelně vyjmout
+ovlivňovat teplotou, před čímž kousek plastu moc dobře neizoluje a~stejně by
+% "moc" bych nahradila "tak", ale to je jen kosmetická a není nutná. 
 získal teplotu okolí.}
 
 Jako poslední zasuneme vodiče do plastových trubiček a~ty připevníme pomocí
@@ -76,7 +80,7 @@ milivoltmetr pro měření napětí na termočlánku.
 Do termosky nalijeme vodu, přidáme do ní led a~vyčkáme, dokud se teplota
 neustálí (výsledná teplota by se měla pohybovat okolo~$"0 \C"$). Následně
 nalijeme horkou, až vroucí, vodu do kádinky a~započneme měření. Při klesání
-rozdílu teplot pravidelně odečítáme hodnoty obou teploměrů a~milivoltmetru
+rozdílu teplot pravidelně odečítáme hodnoty z obou teploměrů a~milivoltmetru
 do momentu, kdy se teplota teplé vody ustálí na pokojové teplotě, kdy se
 již rozdíl teplot kádinky a~termosky více nemění.
 
@@ -86,7 +90,10 @@ již rozdíl teplot kádinky a~termosky více nemění.
 %V~grafu~\ref{graph:data} jsme znázornili i~funkce, které aproximují naměřená
 %data. Otázkou ovšem zůstává, jak jsme k~nim došli.
 Naměření dat je pouze polovina toho, co musíme v experimentu provést. Abychom
+% změnila bych "Naměření" na "Měření"
 mohli vyvodit nějaké závěry a tvrzení, musí být naměřená data zpracovaná,
+% "tvrzení" jsou "nějaká", tedy nesedí vazba, ale opakování slov mi nepřipadá
+% jako ideální řešení. Buďto lehkou reformulaci, nebo doufat, že se to ztratí? 
 především musí být vypočítán samotný parametr termočlánku, kvůli kterému
 celé měření provádíme.
 
@@ -120,7 +127,7 @@ funkci~\eqref{eq:E}.
 Data jsou měřena za pomoci dvou digitálních teploměrů značky Vernier
 s~nejmenším dílkem o~velikosti~$"0.1 \C"$ a~analogového voltmetru
 o~přesnosti~$"0.2 mV"$ (obr.~\ref{fig:voltmetr}).
-Místnost, v~níž byl experiment měřen, měla konstantní teplotu~$"21 \C"$,
+Místnost, v~níž byl experiment prováděn, měla konstantní teplotu~$"21 \C"$,
 přičemž tlak vzduchu v~místnosti byl~$"1~008 hPa"$ a~vlhkost vzduchu se
 pohybovala okolo~$"60 \%"$.
 
@@ -157,8 +164,10 @@ teplot, tedy ochlazování teplého konce termočlánku.
 \end{table}
 
 Z~těchto dat můžeme vytvořit graf~\ref{graph:data} znázorňující data. Ten je
+% "znázorňující data" bych vyměnila za závislost, která v grafu je, protože
+% z dat tvoříme graf znázorňující data zní divně
 uveden včetně proložené funkce s předpisem shodným s rovnicí~\ref{eq:E}. 
-V tomto přepisu neznáme parametr~$\alpha$, jenž je ale vypočitatelný
+V tomto předpisu neznáme parametr~$\alpha$, jenž je ale vypočítatelný
 z~rovnice~\ref{eq:thermo_param} a jeho hodnota je
 \eq{
     \alpha = "0.036~2 mV.\C^{-1}"\,.
@@ -188,7 +197,8 @@ našich hodnot nabývá rovnice tvaru
 }
 
 Po využití tohoto vztahu\footnote{Do vztahu jsou doplněna všechna naměřená data
-(sloupce~$E_1$ a~$E_2$ v~tabulce~\ref{tab:data}), né pouhé průměry pro
+(sloupce~$E_1$ a~$E_2$ v~tabulce~\ref{tab:data}), ne pouhé průměry pro
+% Má tam být "ne", nebo je to nedokončené slovo?
 jednotlivé rozdíly teplot (sloupec~$\avg{E}$).} dostáváme 
 hodnotu~$R^2 = "0.958~5" = "95.85 \%"$, ze které můžeme usuzovat, že naše 
 měření bylo poměrně přesné\footnotei{.}{To usuzujeme z~faktu, že nejvyšší 
