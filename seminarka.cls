@@ -82,14 +82,15 @@
     \newcommand\prohlaseni[1]{\renewcommand\@prohlaseni{#1}}
 \newcommand\@podekovani{N/A}
     \newcommand\podekovani[1]{\renewcommand\@podekovani{#1}}
+\newcommand\@zadaniscan{N/A}
+    \newcommand\zadaniscan[1]{\renewcommand\@zadaniscan{#1}}
 
 \newcommand\mcite[1]{\mbox{\cite{#1}}}
 \newcommand\avg[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 \renewcommand{\maketitle}{
     \firstpage
-    \pagebreak
-    \emptypage
+    \printzadani
     \printprohlaseni
     \printpodekovani
     \tableofcontents
@@ -126,6 +127,7 @@
         Autor: \@author \hfill Vedoucí: \@leader
         \vspace{1cm}}
     \end{titlepage}
+    \newpage
 }
 
 \newcommand\emptypage{
@@ -133,6 +135,24 @@
     \thispagestyle{empty}
     \null
     \clearpage
+}
+
+% --- Create page for task scan ---
+\RequirePackage{ifthen}
+\usepackage{pdfpages}
+\newcommand{\printzadani}{
+    \ifthenelse{\equal{\@zadaniscan}{N/A}}{
+        \ClassWarning{seminarka.cls}{No scan file provided.}
+        \emptypage
+    }{
+        \IfFileExists{\@zadaniscan}{
+            \includepdf{\@zadaniscan}
+        }{
+            \ClassWarning{seminarka.cls}{Provided scan file \@zadaniscan
+            does not exist}
+            \emptypage
+        }
+    }
 }
 
 % --- Create page "Prohlášení" ---
