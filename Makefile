@@ -27,8 +27,9 @@ build/seminarka_school_version.pdf: seminarka_school_version.tex $(DEP)
 figures/%.eps: figures/%.src.svg
 	inkscape $< -o $@
 
+gnuplot=cd graf && gnuplot -e "set format '$$\"%g\"$$'; set terminal epslatex color size 16cm,9.5cm; set output '$(@F)'" $(<F)
 graf/%.tex: graf/%.src.plt
-	cd graf && gnuplot -e "set format '$$\"%g\"$$'; set terminal epslatex color size 15.7cm,8.4cm; set output '$(@F)'" $(<F)
+	$(gnuplot)
 
 graf/%.tex: graf/%.src.plt graf/%.src.dat
-	cd graf && gnuplot -e "set format '$$\"%g\"$$'; set terminal epslatex color size 15.7cm,8.4cm; set output '$(@F)'" $(<F)
+	$(gnuplot)

@@ -13,6 +13,8 @@ set ytics nomirror
 set xlabel "$x$"
 set ylabel "$y$" norotate offset 3,0
 
+set lmargin 6
+
 set style line 1 lc rgb "#000000" lw 4
 set style line 2 lc rgb "#000000" lw 4 dt 2 ps 2
 
