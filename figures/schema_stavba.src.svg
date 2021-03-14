@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="41.373669mm"
-   height="39.217251mm"
-   viewBox="0 0 41.373669 39.217252"
+   width="41.470535mm"
+   height="38.918121mm"
+   viewBox="0 0 41.470536 38.918123"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
@@ -893,23 +893,23 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.6183294"
-     inkscape:cx="78.53985"
-     inkscape:cy="81.966273"
+     inkscape:zoom="3.9722002"
+     inkscape:cx="74.934096"
+     inkscape:cy="87.404645"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1058"
+     inkscape:window-height="1038"
      inkscape:window-x="1400"
-     inkscape:window-y="22"
+     inkscape:window-y="42"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
        id="grid833"
-       originx="-70.032923"
-       originy="-81.256917" />
+       originx="-70.032926"
+       originy="-81.556049" />
   </sodipodi:namedview>
   <metadata
      id="metadata5">
@@ -927,9 +927,9 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-70.032929,-81.25691)">
+     transform="translate(-70.032929,-81.556042)">
     <g
-       id="g1297">
+       id="g1461">
       <path
          style="fill:none;stroke:#626262;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.265, 0.265;stroke-dashoffset:0;stroke-opacity:1"
          d="M 78.052082,88.635416 H 101.86458"
@@ -1036,7 +1036,7 @@
          r="0.52916664" />
       <g
          inkscape:label=""
-         transform="matrix(0.18454938,0,0,0.18454938,68.304352,73.069391)"
+         transform="matrix(0.18454938,0,0,0.18454938,68.304348,72.8047)"
          id="g1514"
          style="stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none">
         <g
@@ -1134,7 +1134,7 @@
       </g>
       <g
          inkscape:label=""
-         transform="matrix(0.18454938,0,0,0.18454938,69.8384,81.289206)"
+         transform="matrix(0.18454938,0,0,0.18454938,69.795196,81.289206)"
          id="g1872"
          style="stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none">
         <g
@@ -1209,7 +1209,7 @@
       </g>
       <g
          inkscape:label=""
-         transform="matrix(0,-0.18454938,0.18454938,0,96.260194,109.36123)"
+         transform="matrix(0,-0.18454938,0.18454938,0,96.357061,109.36123)"
          id="g2095"
          style="stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none">
         <g
@@ -1287,7 +1287,7 @@
       </g>
       <g
          inkscape:label=""
-         transform="matrix(0.18454938,0,0,0.18454938,54.206741,67.408117)"
+         transform="matrix(0.18454938,0,0,0.18454938,53.429875,67.707249)"
          id="g2340">
         <g
            id="g4311">
@@ -1338,7 +1338,7 @@
       </g>
       <g
          id="g6914"
-         transform="matrix(0.18454938,0,0,0.18454938,51.070125,68.148306)">
+         transform="matrix(0.18454938,0,0,0.18454938,50.963277,67.883615)">
         <g
            inkscape:label=""
            transform="translate(25.5478,26.7201)"

@@ -2757,9 +2757,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.4438808"
-     inkscape:cx="76.282787"
-     inkscape:cy="58.585835"
+     inkscape:zoom="3.8713266"
+     inkscape:cx="30.022128"
+     inkscape:cy="66.751056"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -2783,7 +2783,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2793,7 +2793,7 @@
      id="layer1"
      transform="translate(-112.37292,-100.02367)">
     <g
-       id="g4726">
+       id="g1707">
       <path
          style="fill:none;stroke:#626262;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 117.73958,124.35417 2.64584,-13.22917 h 9.26041 l 2.64583,13.22917"
@@ -3101,7 +3101,7 @@
       </g>
       <g
          id="g6914-3"
-         transform="matrix(0.16986931,0,0,0.16986931,103.37172,88.311025)">
+         transform="matrix(0.16986931,0,0,0.16986931,103.37172,88.145687)">
         <g
            inkscape:label=""
            transform="translate(25.5478,26.7201)"
@@ -3172,7 +3172,7 @@
       </g>
       <g
          inkscape:label=""
-         transform="matrix(0.16986931,0,0,0.16986931,105.08411,96.93246)"
+         transform="matrix(0.16986931,0,0,0.16986931,105.08411,96.767122)"
          id="g1514-7"
          style="stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none">
         <g
