@@ -28,8 +28,9 @@ figures/%.eps: figures/%.src.svg
 	inkscape $< -o $@
 
 gnuplot=cd graf && gnuplot -e "set format '$$\"%g\"$$'; set terminal epslatex color size 16cm,9.5cm; set output '$(@F)'" $(<F)
+graf/%.tex: graf/%.src.plt graf/%.src.dat
+	$(gnuplot)
+
 graf/%.tex: graf/%.src.plt
 	$(gnuplot)
 
-graf/%.tex: graf/%.src.plt graf/%.src.dat
-	$(gnuplot)
