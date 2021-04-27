@@ -1,0 +1,205 @@
+\documentclass[smaller,aspectratio=1610,handout]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{krskasugar}
+\usepackage{fkssugar}
+\usepackage{booktabs}
+
+%\usepackage[
+%	backend=biber,        % if we want unicode and many other features (biber is already by default)
+%	style=iso-numeric,    % iso-numeric for numeric citation method
+%	sorting=nty,          % for alphabetic sorting by author
+%	sortcites=true
+%]{biblatex}
+
+
+\author[A. Krška]{Adam Krška}
+\title[Stanovení parametru termočlánku]{Stanovení parametru termočlánku pomocí
+metody nejmenších čtverců}
+\subtitle{Seminární práce}
+\institute[GSS Mikulov]{Gymnázium a střední odborná škola Mikulov}
+\date{}
+
+\usetheme{Frankfurt}
+\usefonttheme{professionalfonts}
+\usecolortheme{rose}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+
+\graphicspath{{./graf/}{./figures/}}
+%\addbibresource{sources.bib}
+
+\newcommand\avg[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand\sumi{\sum_{i=1}^n}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Obsah}
+	\tableofcontents
+\end{frame}
+
+\section{Cíl Práce}
+
+\begin{frame}
+	\frametitle{Cíl práce}
+	\begin{itemize}
+		\item vysvětlení metody nejmenších čtverců
+		\item experimentální měření dat termočlánku
+		\item výpočet parametru termočlánku pomocí metody nejmenších čtverců
+	\end{itemize}	
+\end{frame}
+
+\section{Současný stav řešené problematiky}
+\subsection{Proložení dat funkcí}
+
+\begin{frame}
+	\frametitle{Proložení dat funkcí}
+	\framesubtitle{Aproximace a interpolace}
+	
+	\begin{block}{Interpolace}
+		Spojení všech bodů spojitou křivkou.	
+	\end{block}
+
+	\begin{block}{Aproximace}
+		Hledání předpisu funkce vhodně vyjadřující datové body.	
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proložení dat funkcí}
+	\framesubtitle{Metoda nejmenších čtverců}
+	\begin{itemize}
+		\item metoda pro nalezení parametrů předpisu funkce
+		\item minimalizace druhých mocnin odchylek dat a funkce 
+	\end{itemize}
+
+	\eq{S=\sumi\(y_i-f(x_i)\)^2}
+
+	\begin{itemize}
+		\item metody řešení
+			\begin{itemize}
+				\item iterativně
+				\item analyticky
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proložení dat funkcí}
+	\framesubtitle{Lineární regrese}
+	\begin{itemize}
+		\item speciální případ prokládání dat
+		\item aproximace lineární funkcí
+		\item analytické řešení
+	\end{itemize}
+\end{frame}
+
+\subsection{Termoelektrický jev}
+
+\begin{frame}
+	\frametitle{Termoelektrický jev}
+	\begin{itemize}
+		\item souhrnný název pro více efektů
+			\begin{itemize}
+				\item Seebeckův efekt
+				\item Peltierův efekt
+				\item Thomsonův efekt
+				\item Benedickův efekt
+			\end{itemize}
+		\item popis spojitosti elektrického napětí a rozdílu teplot
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Termoelektrický jev}
+	\framesubtitle{Termočlánky}
+	\begin{itemize}
+		\item spojení dvou druhů kovů
+		\item rozdíl teplot spojů vede k vytvoření napětí
+		\item různé kombinace kovů -- různé vlastnosti
+		\item standart IEC 584
+	\end{itemize}
+\end{frame}
+
+\section{Experiment a Výsledky}
+
+\subsection{Popis experimentu}
+\begin{frame}
+	\frametitle{Popis experimentu}
+	\begin{enumerate}
+		\item sestavení vlastního termočlánku typu T
+		\item změření termoelektrického jevu
+			\begin{itemize}
+				\item ohřívání a ochlazování konců termočlánku
+			\end{itemize}
+		\item stanovení parametru $\alpha$ pro tento termočlánek
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Popis experimentu}
+	\framesubtitle{Výpočet parametru}
+	\begin{block}{Závislost termoelektrického napětí při nízkém rozdílu teplot.}
+		\centering $E=\alpha\Delta T$
+	\end{block}
+	\begin{block}{Výpočet parametru}
+		\centering $a=\frac{\sumi x_iy_i}{\sumi x_i^2}
+		\ztoho \alpha=\frac{\sumi\Delta T_i*E_i}{\sumi (\Delta T_i)^2}$
+	\end{block}
+\end{frame}
+
+\subsection{Naměřená data}
+\begin{frame}
+	\frametitle{Naměřená data}
+	\framesubtitle{Tabulka dat}
+	\hspace{0cm}\vfill
+	\footnotesize
+	\input{sekce/table_mereni.tex}
+	\vfill
+\end{frame}
+
+\begin{frame}
+	\frametitle{Naměřená data}
+	\framesubtitle{Data v grafu}
+	\hspace{0cm}\vfill
+	\small
+	\plotfig{graf/data-pres.tex}
+	\vfill
+\end{frame}
+\begin{frame}
+	\frametitle{Naměřená data}
+	\framesubtitle{Vypočtené parametry}
+	\begin{block}{Závislost termoelektrického napětí při nízkém rozdílu teplot.}
+		\centering $\alpha = "0.036~2 mV.C^{-1}"$
+	\end{block}
+	\begin{block}{Výpočet parametru}
+		\centering $R^2="0.958~5"="95.85 \%"$
+	\end{block}
+\end{frame}
+
+\section{Diskuze}
+\begin{frame}
+	\frametitle{Diskuze}
+	\begin{itemize}
+		\item změřit experiment vícekrát
+		\item použít digitální voltmetr
+		\item provést experiment při zahřívání i ochlazování
+	\end{itemize}
+\end{frame}
+
+\section{Závěr}
+\begin{frame}
+	\frametitle{Závěr}
+	\begin{itemize}
+		\item metoda nejmenších čtverců je důležitá v prokládání dat funkcí
+		\item termočlánek -- dva spolu spojené druhy kovů, na kterých se
+			projevuje termoelektrický jev
+		\item nutno měřit koeficienty pro každou dvojici kovů
+		\item termočlánek typu T: $\alpha = "0.036~2 mV.C^{-1}"$
+		\item přesnost našeho měření: $R^2="0.958~5"="95.85 \%"$
+	\end{itemize}
+\end{frame}
+\end{document}
