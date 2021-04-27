@@ -25,7 +25,7 @@ build/seminarka_school_version.pdf: seminarka_school_version.tex $(DEP)
 	latexmk -xelatex -jobname=build/seminarka_school_version seminarka_school_version.tex
 
 build/prezentace.pdf: prezentace.tex $(patsubst %.src.plt, %-pres.tex, $(wildcard graf/*.src.plt))
-	latexmk -xelatex -jobname=build/prezentace prezentace.tex
+	latexmk -pdflatex -jobname=build/prezentace prezentace.tex
 
 figures/%.eps: figures/%.src.svg
 	inkscape $< -o $@
