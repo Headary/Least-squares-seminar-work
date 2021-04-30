@@ -7,12 +7,12 @@
 \usepackage{fkssugar}
 \usepackage{booktabs}
 
-%\usepackage[
-%	backend=biber,        % if we want unicode and many other features (biber is already by default)
-%	style=iso-numeric,    % iso-numeric for numeric citation method
-%	sorting=nty,          % for alphabetic sorting by author
-%	sortcites=true
-%]{biblatex}
+\usepackage[
+	backend=biber,        % if we want unicode and many other features (biber is already by default)
+	style=iso-numeric,    % iso-numeric for numeric citation method
+	sorting=nty,          % for alphabetic sorting by author
+	sortcites=true
+]{biblatex}
 
 
 \author[A. Krška]{Adam Krška}
@@ -25,22 +25,22 @@ metody nejmenších čtverců}
 \usetheme{Frankfurt}
 \usefonttheme{professionalfonts}
 \usecolortheme{rose}
+\useinnertheme{circles}
 %\setbeamercovered{transparent} 
 %\setbeamertemplate{navigation symbols}{} 
 
 \graphicspath{{./graf/}{./figures/}}
-%\addbibresource{sources.bib}
+\addbibresource{sources.bib}
 
 \newcommand\avg[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand\sumi{\sum_{i=1}^n}
 
 \begin{document}
-\frame{\titlepage}
+\frame[plain]{\titlepage}
 
 \begin{frame}{Obsah}
 	\tableofcontents
 \end{frame}
-
 \section{Cíl Práce}
 
 \begin{frame}
@@ -52,7 +52,7 @@ metody nejmenších čtverců}
 	\end{itemize}	
 \end{frame}
 
-\section{Současný stav řešené problematiky}
+\section{Současný stav problematiky}
 \subsection{Proložení dat funkcí}
 
 \begin{frame}
@@ -75,8 +75,10 @@ metody nejmenších čtverců}
 		\item metoda pro nalezení parametrů předpisu funkce
 		\item minimalizace druhých mocnin odchylek dat a funkce 
 	\end{itemize}
-
+	\begin{block}{Hledání minimum funkce}
+	\vspace*{-0.2\baselineskip}\setlength\belowdisplayshortskip{0pt}
 	\eq{S=\sumi\(y_i-f(x_i)\)^2}
+	\end{block}
 
 	\begin{itemize}
 		\item metody řešení
@@ -109,19 +111,26 @@ metody nejmenších čtverců}
 				\item Thomsonův efekt
 				\item Benedickův efekt
 			\end{itemize}
-		\item popis spojitosti elektrického napětí a rozdílu teplot
+		\item popis souvislosti elektrického napětí a rozdílu teplot
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Termoelektrický jev}
 	\framesubtitle{Termočlánky}
-	\begin{itemize}
-		\item spojení dvou druhů kovů
-		\item rozdíl teplot spojů vede k vytvoření napětí
-		\item různé kombinace kovů -- různé vlastnosti
-		\item standart IEC 584
-	\end{itemize}
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\begin{itemize}
+				\item spojení dvou druhů kovů
+				\item rozdíl teplot spojů vede k vytvoření napětí
+				\item různé kombinace kovů -- různé vlastnosti
+				\item standart IEC 584
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\fullfig[width=0.9\linewidth]{termoclanek}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \section{Experiment a Výsledky}
@@ -129,14 +138,21 @@ metody nejmenších čtverců}
 \subsection{Popis experimentu}
 \begin{frame}
 	\frametitle{Popis experimentu}
-	\begin{enumerate}
-		\item sestavení vlastního termočlánku typu T
-		\item změření termoelektrického jevu
-			\begin{itemize}
-				\item ohřívání a ochlazování konců termočlánku
-			\end{itemize}
-		\item stanovení parametru $\alpha$ pro tento termočlánek
-	\end{enumerate}
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{enumerate}
+				\item sestavení vlastního termočlánku typu T
+				\item změření termoelektrického jevu
+					\begin{itemize}
+						\item ohřívání a ochlazování konců termočlánku
+					\end{itemize}
+				\item stanovení parametru $\alpha$ pro tento termočlánek
+			\end{enumerate}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\fullfig[width=0.8\linewidth]{schema_stavba}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -172,10 +188,10 @@ metody nejmenších čtverců}
 \begin{frame}
 	\frametitle{Naměřená data}
 	\framesubtitle{Vypočtené parametry}
-	\begin{block}{Závislost termoelektrického napětí při nízkém rozdílu teplot.}
+	\begin{block}{Vypočtený parametr termočlánku}
 		\centering $\alpha = "0.036~2 mV.C^{-1}"$
 	\end{block}
-	\begin{block}{Výpočet parametru}
+	\begin{block}{Rozptyl naměřených dat}
 		\centering $R^2="0.958~5"="95.85 \%"$
 	\end{block}
 \end{frame}
@@ -184,9 +200,9 @@ metody nejmenších čtverců}
 \begin{frame}
 	\frametitle{Diskuze}
 	\begin{itemize}
-		\item změřit experiment vícekrát
-		\item použít digitální voltmetr
-		\item provést experiment při zahřívání i ochlazování
+		\item provedení experiment vícekrát
+		\item použití digitální voltmetr
+		\item provedení experiment při zahřívání i ochlazování
 	\end{itemize}
 \end{frame}
 
@@ -201,5 +217,17 @@ metody nejmenších čtverců}
 		\item termočlánek typu T: $\alpha = "0.036~2 mV.C^{-1}"$
 		\item přesnost našeho měření: $R^2="0.958~5"="95.85 \%"$
 	\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks=.85]{Zdroje}
+	\setbeamertemplate{bibliography item}{}
+	\nocite{*}
+    \printbibliography[heading=none]
+\end{frame}
+
+\part{}
+
+\begin{frame}[plain]
+	\titlepage
 \end{frame}
 \end{document}
