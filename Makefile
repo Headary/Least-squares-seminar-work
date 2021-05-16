@@ -1,8 +1,11 @@
 
-.PHONY: all clean quick
-all: build/seminarka.pdf build/seminarka_school_version.pdf build/prezentace.pdf
+.PHONY: all clean cleanall quick
+all: build/seminarka.pdf build/seminarka_school_version.pdf build/prezentace.pdf build/otazky.pdf
 
 clean:
+	find build/ -type f -not -name "*.pdf" -exec rm {} \;
+	
+cleanall:
 	find build/ -type f -not -name "*.pdf" -exec rm {} \;
 	find graf/ -type f -name "*.eps" -exec rm {} \;
 	find graf/ -type f -name "*.tex" -exec rm {} \;
@@ -18,11 +21,14 @@ DEP=seminarka.tex seminarka.cls sources.bib \
 	$(patsubst %.src.svg, %.eps, $(wildcard figures/*.src.svg)) \
 	$(wildcard figures/*.jpg)
 
-build/seminarka.pdf: $(DEP)
-	latexmk -xelatex -jobname=build/seminarka seminarka.tex
+LATEXMK=latexmk -xelatex -jobname=$(basename $@) $<
 
+build/seminarka.pdf: $(DEP)
+	$(LATEXMK)
 build/seminarka_school_version.pdf: seminarka_school_version.tex $(DEP)
-	latexmk -xelatex -jobname=build/seminarka_school_version seminarka_school_version.tex
+	$(LATEXMK)
+build/otazky.pdf: otazky.tex seminarka.cls
+	$(LATEXMK)
 
 build/prezentace.pdf: prezentace.tex $(patsubst %.src.plt, %-pres.tex, $(wildcard graf/*.src.plt))
 	latexmk -pdflatex -jobname=build/prezentace prezentace.tex

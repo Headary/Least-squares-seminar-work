@@ -16,16 +16,16 @@
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 
-% citations 
+% citations
 \RequirePackage[
-  backend=biber,        % if we want unicode and many other features (biber is already by default)
-  style=iso-numeric,    % iso-numeric for numeric citation method
-  sorting=nty,          % for alphabetic sorting by author
-  sortcites=true
+	backend=biber, % if we want unicode and many other features (biber is already by default)
+	style=iso-numeric, % iso-numeric for numeric citation method
+	sorting=nty, % for alphabetic sorting by author
+	sortcites=true
 ]{biblatex}
 
 \RequirePackage[
-    margin=2.5cm,
+	margin=2.5cm,
 	headheight=14pt]{geometry}
 \RequirePackage{lastpage} % get number of pages
 \RequirePackage[nobottomtitles]{titlesec} % change headins style
@@ -35,34 +35,40 @@
 	pdfusetitle,
 	pdfproducer={Latex, or other tool},
 	pdfcreator={pdflatex, or other tool},
-    hyperfigures,
-    hyperfootnotes=false,
-    psdextra
+	hyperfigures,
+	hyperfootnotes=false,
+	psdextra
 ]{hyperref} % create links in file
 
 \RequirePackage{fancyhdr} % enable changing header and footer
 \fancyhf{}
-\fancyhead[RO]{\bfseries\@author}
-\fancyhead[LE]{\@title}
-\fancyfoot[RO,LE]{\thepage/\pageref{LastPage}}
+\if@twoside
+	\fancyhead[RO]{\bfseries\@author}
+	\fancyhead[LE]{\@title}
+	\fancyfoot[RO,LE]{\thepage/\pageref{LastPage}}
+\else
+	\fancyhead[R]{\bfseries\@author}
+	\fancyhead[L]{\@title}
+	\fancyfoot[C]{\thepage/\pageref{LastPage}}
+\fi
 \pagestyle{fancy}
 
 \RequirePackage{setspace}
 \onehalfspacing
 
 \DefineBibliographyStrings{czech}{%
-  at           = {v},
-  in           = {v},
-  bysupervisor = {vedouc\'{i} pr\'{a}ce},
-  urlfrom      = {dostupn\'{e} z},
-  %urlalso      = {dostupn\'{e} tak\'{e} z},
-  urlalso      = {dostupn\'{e} z},
-  director     = {re\v{z}is\'{e}r},
-  bydirector   = {re\v{z}ie},
-  inventor     = {vyn\'{a}lezce},
-  byinventor   = {vyn\'{a}lezce\addcolon},
-  online       = {online},
-  film         = {film}
+	at = {v},
+	in = {v},
+	bysupervisor = {vedouc\'{i} pr\'{a}ce},
+	urlfrom = {dostupn\'{e} z},
+	%urlalso = {dostupn\'{e} tak\'{e} z},
+	urlalso = {dostupn\'{e} z},
+	director = {re\v{z}is\'{e}r},
+	bydirector = {re\v{z}ie},
+	inventor = {vyn\'{a}lezce},
+	byinventor = {vyn\'{a}lezce\addcolon},
+	online = {online},
+	film = {film}
 }
 
 % -- change headings to sans font --
@@ -74,106 +80,106 @@
 \renewcommand{\bottomtitlespace}{0.1\textheight}
 
 % -----
-% Commands 
+% Commands
 % -----
 \newcommand\@leader{N/A}
-    \newcommand\leader[1]{\renewcommand\@leader{#1}}
+	\newcommand\leader[1]{\renewcommand\@leader{#1}}
 \newcommand\@prohlaseni{N/A}
-    \newcommand\prohlaseni[1]{\renewcommand\@prohlaseni{#1}}
+	\newcommand\prohlaseni[1]{\renewcommand\@prohlaseni{#1}}
 \newcommand\@podekovani{N/A}
-    \newcommand\podekovani[1]{\renewcommand\@podekovani{#1}}
+	\newcommand\podekovani[1]{\renewcommand\@podekovani{#1}}
 \newcommand\@zadaniscan{N/A}
-    \newcommand\zadaniscan[1]{\renewcommand\@zadaniscan{#1}}
+	\newcommand\zadaniscan[1]{\renewcommand\@zadaniscan{#1}}
 
 \newcommand\mcite[1]{\mbox{\cite{#1}}}
 \newcommand\avg[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 
 \renewcommand{\maketitle}{
-    \firstpage
-    \printzadani
-    \printprohlaseni
-    \printpodekovani
-    \tableofcontents
-    \newpage
+	\firstpage
+	\printzadani
+	\printprohlaseni
+	\printpodekovani
+	\tableofcontents
+	\newpage
 }
 
 % --- define first page ---
 \newcommand{\firstpage}{
-    \begin{titlepage}
-        %\thispagestyle{empty}
-        {\large
-        \centering
-        \vspace{1.5cm}
+	\begin{titlepage}
+		%\thispagestyle{empty}
+		{\large
+		\centering
+		\vspace{1.5cm}
 
-        Gymnázium a~střední odborná škola Mikulov\\
-        příspěvková organizace
+		Gymnázium a~střední odborná škola Mikulov\\
+		příspěvková organizace
 
-        \vspace{1.5cm}
+		\vspace{1.5cm}
 
-        \includegraphics[width=0.3\textwidth]{figures/gss.pdf}
+		\includegraphics[width=0.3\textwidth]{figures/gss.pdf}
 
-        \vspace{3cm}
+		\vspace{3cm}
 
-        {\Large\bfseries\sffamily\@title}
+		{\Large\bfseries\sffamily\@title}
 
-        \vspace{0.5cm}
+		\vspace{0.5cm}
 
-        Seminární práce
+		Seminární práce
 
-        \vspace{2.5cm}
+		\vspace{2.5cm}
 
-        Mikulov 2021
-        \vfill
-        Autor: \@author \hfill Vedoucí: \@leader
-        \vspace{1cm}}
-    \end{titlepage}
-    \newpage
+		Mikulov 2021
+		\vfill
+		Autor: \@author \hfill Vedoucí: \@leader
+		\vspace{1cm}}
+	\end{titlepage}
+	\newpage
 }
 
 \newcommand\emptypage{
-    \clearpage
-    \thispagestyle{empty}
-    \null
-    \clearpage
+	\clearpage
+	\thispagestyle{empty}
+	\null
+	\clearpage
 }
 
 % --- Create page for task scan ---
 \RequirePackage{ifthen}
 \usepackage{pdfpages}
 \newcommand{\printzadani}{
-    \ifthenelse{\equal{\@zadaniscan}{N/A}}{
-        \ClassWarning{seminarka.cls}{No scan file provided.}
-        \emptypage
-    }{
-        \IfFileExists{\@zadaniscan}{
-            \includepdf{\@zadaniscan}
-        }{
-            \ClassWarning{seminarka.cls}{Provided scan file \@zadaniscan
-            does not exist}
-            \emptypage
-        }
-    }
+	\ifthenelse{\equal{\@zadaniscan}{N/A}}{
+		\ClassWarning{seminarka.cls}{No scan file provided.}
+		\emptypage
+	}{
+		\IfFileExists{\@zadaniscan}{
+			\includepdf{\@zadaniscan}
+		}{
+			\ClassWarning{seminarka.cls}{Provided scan file \@zadaniscan
+			does not exist}
+			\emptypage
+		}
+	}
 }
 
 % --- Create page "Prohlášení" ---
 \RequirePackage{dashrule} % dotted line
 \newcommand{\printprohlaseni}{
-    \newpage
-    \thispagestyle{empty}
-    \hspace{0cm}
-    \vfill
-    \section*{Prohlášení}
-    \@prohlaseni
-    \newpage
+	\newpage
+	\thispagestyle{empty}
+	\hspace{0cm}
+	\vfill
+	\section*{Prohlášení}
+	\@prohlaseni
+	\newpage
 }
 
 % --- Create page "Poděkování" ---
 \newcommand{\printpodekovani}{
-    \newpage
-    \thispagestyle{empty}
-    \hspace{0cm}
-    \vfill
-    \section*{Poděkování}
-    \@podekovani
-    \newpage
+	\newpage
+	\thispagestyle{empty}
+	\hspace{0cm}
+	\vfill
+	\section*{Poděkování}
+	\@podekovani
+	\newpage
 }
