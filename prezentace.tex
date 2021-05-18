@@ -8,12 +8,12 @@
 \usepackage{booktabs}
 \usepackage{subcaption}
 
-%\usepackage[
-%	backend=biber,        % if we want unicode and many other features (biber is already by default)
-%	style=iso-numeric,    % iso-numeric for numeric citation method
-%	sorting=nty,          % for alphabetic sorting by author
-%	sortcites=true
-%]{biblatex}
+\usepackage[
+	backend=biber,        % if we want unicode and many other features (biber is already by default)
+	style=iso-numeric,    % iso-numeric for numeric citation method
+	sorting=nty,          % for alphabetic sorting by author
+	sortcites=true
+]{biblatex}
 
 
 \author[A. Krška]{Adam Krška}
@@ -27,11 +27,11 @@ metody nejmenších čtverců}
 \usefonttheme{professionalfonts}
 \usecolortheme{rose}
 \useinnertheme{circles}
-%\setbeamercovered{transparent} 
-%\setbeamertemplate{navigation symbols}{} 
+%\setbeamercovered{transparent}
+%\setbeamertemplate{navigation symbols}{}
 
 \graphicspath{{./graf/}{./figures/}}
-%\addbibresource{sources.bib}
+\addbibresource{sources.bib}
 
 \newcommand\avg[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand\sumi{\sum_{i=1}^n}
@@ -39,123 +39,34 @@ metody nejmenších čtverců}
 \begin{document}
 \frame[plain]{\titlepage}
 
-\begin{frame}{Obsah}
+\begin{frame}[plain]{Obsah}
 	\tableofcontents
 \end{frame}
 
-\section{Úvod}
-\begin{frame}
-	\frametitle{Úvod}
-	\framesubtitle{Cíl experimentu}
-	\begin{itemize}
-		\item vlastnoruční sestavení termočlánku typu~T
-		\item experimentální měření dat termočlánku
-		\item výpočet parametru termočlánku pomocí metody nejmenších čtverců
-	\end{itemize}	
-\end{frame}
-
+%\section{Úvod}
 %\begin{frame}
 %	\frametitle{Úvod}
-%	\framesubtitle{Zdroje}
+%	\framesubtitle{Cíl experimentu}
 %	\begin{itemize}
-%		\item využito 11 zdrojů
-%		\item internetové zdroje, vysokoškolské skripta, bakalářské práce\dots
-%	\end{itemize}
+%		\item vlastnoruční sestavení termočlánku typu~T
+%		\item experimentální měření dat termočlánku
+%		\item výpočet parametru termočlánku pomocí metody nejmenších čtverců
+%	\end{itemize}	
 %\end{frame}
 
-%\section{Současný stav problematiky} \subsection{Proložení dat funkcí}
-%
-%\begin{frame}
-%	\frametitle{Proložení dat funkcí}
-%	\framesubtitle{Aproximace a interpolace}
-%	
-%	\begin{block}{Interpolace}
-%		Spojení všech bodů spojitou křivkou.	
-%	\end{block}
-%
-%	\begin{block}{Aproximace}
-%		Hledání předpisu funkce vhodně vyjadřující datové body.	
-%	\end{block}
-%\end{frame}
-%
-%\begin{frame}
-%	\frametitle{Proložení dat funkcí}
-%	\framesubtitle{Metoda nejmenších čtverců}
-%	\begin{itemize}
-%		\item metoda pro nalezení parametrů předpisu funkce
-%		\item minimalizace druhých mocnin odchylek dat a funkce 
-%	\end{itemize}
-%	\begin{block}{Hledání minima funkce}
-%	\vspace*{-0.2\baselineskip}\setlength\belowdisplayshortskip{0pt}
-%	\eq{S=\sumi\(y_i-f(x_i)\)^2}
-%	\end{block}
-%
-%	\begin{itemize}
-%		\item metody řešení
-%			\begin{itemize}
-%				\item iterativně
-%				\item analyticky
-%			\end{itemize}
-%	\end{itemize}
-%\end{frame}
-%
-%\begin{frame}
-%	\frametitle{Proložení dat funkcí}
-%	\framesubtitle{Lineární regrese}
-%	\begin{itemize}
-%		\item speciální případ prokládání dat
-%		\item aproximace lineární funkcí
-%		\item analytické řešení
-%	\end{itemize}
-%\end{frame}
-%
-%\subsection{Termoelektrický jev}
-%
-%\begin{frame}
-%	\frametitle{Termoelektrický jev}
-%	\begin{itemize}
-%		\item souhrnný název pro více efektů
-%			\begin{itemize}
-%				\item Seebeckův efekt
-%				\item Peltierův efekt
-%				\item Thomsonův efekt
-%				\item Benedickův efekt
-%			\end{itemize}
-%		\item popis souvislosti elektrického napětí a rozdílu teplot
-%	\end{itemize}
-%\end{frame}
-%
-%\begin{frame}
-%	\frametitle{Termoelektrický jev}
-%	\framesubtitle{Termočlánky}
-%	\begin{columns}
-%		\begin{column}{0.6\textwidth}
-%			\begin{itemize}
-%				\item spojení dvou druhů kovů
-%				\item rozdíl teplot spojů vede k vytvoření napětí
-%				\item různé kombinace kovů -- různé vlastnosti
-%				\item standard IEC 584
-%			\end{itemize}
-%		\end{column}
-%		\begin{column}{0.4\textwidth}
-%			\fullfig[width=0.9\linewidth]{termoclanek}
-%		\end{column}
-%	\end{columns}
-%\end{frame}
-
-
-\section{Metodika}
+\section{Představení experimentu}
 \begin{frame}
-	\frametitle{Metodika}
+	\frametitle{Představení experimentu}
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{enumerate}
-				\item sestavení vlastního termočlánku z mědi a~konstantanu
-				\item změření termoelektrického jevu
+				\item vlastnoruční sestavení vlastního termočlánku typu T z mědi a~konstantanu
+				\item experimentální měření termoelektrického jevu
 					\begin{itemize}
 						\item ohřívání a ochlazování konců termočlánku
 					\end{itemize}
-				\item stanovení parametru $\alpha$ pro tento termočlánek
+				\item stanovení parametru $\alpha$ pro tento termočlánek pomocí
+					metody nejmenších čtverců
 			\end{enumerate}
 		\end{column}
 		\begin{column}{0.5\textwidth}
@@ -227,12 +138,12 @@ metody nejmenších čtverců}
 	\begin{columns}
 		\begin{column}{0.46\textwidth}
 			\begin{block}{Vypočtený parametr termočlánku}
-				\centering $\alpha = "0.036~2 mV.C^{-1}"$
+				\centering $\alpha = "0.036~2 mV.\C^{-1}"$
 			\end{block}
 		\end{column}
 		\begin{column}{0.46\textwidth}
 			\begin{block}{Tabulková hodnota parametru}
-				\centering $\alpha = "0.042 \micro V.C^{-1}"$
+				\centering $\alpha = "0.042 mV.\C^{-1}"$
 			\end{block}
 		\end{column}
 	\end{columns}
@@ -263,8 +174,8 @@ metody nejmenších čtverců}
 		\item nutno měřit koeficienty pro každou dvojici kovů
 		\item termočlánek typu T
 			\begin{itemize}
-				\item experimentální hodnota: $\alpha = "0.036~2 mV.C^{-1}"$
-				\item tabulková hodnota: $\alpha = "0.042 mV.C^{-1}"$
+				\item experimentální hodnota: $\alpha = "0.036~2 mV.\C^{-1}"$
+				\item tabulková hodnota: $\alpha = "0.042 mV.\C^{-1}"$
 			\end{itemize}
 		\item přesnost našeho měření: $R^2="0.958~5"="95.85 \%"$
 	\end{itemize}
@@ -280,5 +191,23 @@ metody nejmenších čtverců}
 
 \begin{frame}[plain]
 	\titlepage
+\end{frame}
+
+\begin{frame}[plain]{Otázky}
+	\begin{enumerate}
+		\item Popište způsob sestavení termočlánku včetně možných problémů.
+		\item Existuje i jiná závislost mezi teplotou a~napětím než přímá úměra?
+			Pokud ano, tak za jakých podmínek?
+		\item Můžete navrhnout na základě tabulkových hodnot termočlánek, který má
+			vyšší termoelektrické napětí na~$"1 \C"$?
+		\item Existují nějaká technická omezení pro použití různých materiálů
+			k~výrobě termočlánku?
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[plain]
+	\input{sekce/table_potencial.tex}
+	[1] \medspace BARTOŇ, Stanislav; KŘIVÁNEK, Ivo; SEVERA, Libor. Fyzika --
+	Laboratorní cvičení. Brno, 2005
 \end{frame}
 \end{document}
